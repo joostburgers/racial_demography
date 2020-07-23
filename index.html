@@ -1,0 +1,284 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Visualizing Racial Demography in Yoknapatawpha</title>
+    <link rel="icon" href="images/stamp.png">
+    <meta name="description" content="Creating demographic maps of fictional texts">
+    <meta name="keywords" content="Digital Yoknapatawpha, literary cartography, William Faulkner, Digital Humanities">
+    <meta name="author" content="Johannes Burgers">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:url"                content="http://faulkner.iath.virginia.edu/the_art_of_faulkner_technique.html" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Visualizing Racial Demography in Yoknapatawpha" />
+    <meta property="og:description"        content="Creating demographic maps of fictional texts" />
+    <meta property="og:image"              content="http://faulkner.iath.virginia.edu/images/SF_preview.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="600" />
+    <meta property="og:locale" content="en_US" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="http://faulkner.iath.virginia.edu/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="http://faulkner.iath.virginia.edu/jquery-ui.css" rel="stylesheet">
+    <link href="http://faulkner.iath.virginia.edu/dropdown.css" rel="stylesheet">
+
+<!-- Additional CSS for flexbox and plotly -->
+    <link href="narrativeanalysis.css" rel="stylesheet">
+      <link href="racial.css" rel="stylesheet">
+  <!-- Plotly.js -->
+  <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://momentjs.com/downloads/moment.js"></script> -->
+  <script src="http://faulkner.iath.virginia.edu/jquery.min.js"></script>
+  <script src="http://faulkner.iath.virginia.edu/jquery-ui.min.js"></script>
+  <script src="http://faulkner.iath.virginia.edu/bootstrap/js/bootstrap.min.js"></script></head>
+  <script src="http://faulkner.iath.virginia.edu/dropdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+
+
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://faulkner.iath.virginia.edu/">Home</a>
+          </div>
+          <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Visualizations <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Location-Character Graphs</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="http://faulkner.iath.virginia.edu/characters-force.html">Force Directed</a></li>
+                                  <li><a href="http://faulkner.iath.virginia.edu/characters-bipart.html">Bipartite</a></li>
+                              </ul>
+                          </li>
+                          <li><a href="http://faulkner.iath.virginia.edu/char-char-force.html">Character-Character Graphs</a></li>
+                          <li><a href="http://faulkner.iath.virginia.edu/characters-graph.html">Character-Event Graphs</a></li>
+                          <li class="dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Heatmaps</a>
+                              <ul class="dropdown-menu">
+                                  <li><a href="http://faulkner.iath.virginia.edu/media/resources/DISPLAYS/HeatmapsHP.html">Spatial</a></li>
+                                  <li><a href="http://faulkner.iath.virginia.edu/media/resources/DISPLAYS/TemporalHeatmapsHP.html">Temporal</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+               <ul class="nav navbar-nav navbar-right">
+                  <li class="dropdown dropdown-left ">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contents<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                            <li><a class="nav-link" href="#introduction">Introduction</a></li>
+                              <li><a class="nav-link" href="#understanding_data">Understanding the Data</a></li>
+                              <li><a class="nav-link" href="#demographic_maps">Literary Cartography and Demographic Maps</a></li>
+                              <li><a class="nav-link" href="#conclusions">Cautions and Conclusions</a></li>
+                              <li><a class="nav-link" href="#further">Further Reading</a></li>
+                              <li><a class="nav-link" href="#citing">Citing This Source</a></li>
+                          </div>
+
+                      </ul>
+                  </li>
+
+              </ul>
+          </div>
+      </div>
+  </div>
+
+
+  <div class= "container">
+    <div class="essay-body">
+    <div class = "row">
+      <div class = "col">
+      <h2>Visualizing Racial Demography in Yoknapatawpha</h2>
+      <h4 align="center"><em>Johannes Burgers</em></h4>
+<div class="anchor" id="introduction"></div>
+<h3>Introduction</h3>
+<p>The Digital Yoknapatawpha database represents a highly curated data set that, in abstract form, represents "all" of the locations, characters, and events in Faulkner's Yoknapatawpha fiction. This data can be aggregated to gain insight into what types of characters are interacting and where. These interactions represent a kind of demography. This is not a traditional demography. There are, of course, no census records, voting rolls, or cadastral surveys to draw from to paint a picture of Yoknapatawpha. Nevertheless, a number of pieces of information can act as proxies for understanding the relationship between characters and locations across the corpus. These can be used to create various visualizations that resemble common cartographic means of representing population distributions, including modified versions of choropleths and population density "heatmaps." These reveal the deep connection between Faulkner's people and places. The following piece documents how these techniques were used to create a demographic breakdown of race in Yoknapatawpha county, how to read them, what they might mean, and what some of their limitations are. To be sure, there are any number of ways to represent the mapping data, and the way that data has been subsetted and represented here is somewhat at variance with the standard heatmaps available in the main display, an extensive commentary on those is available
+<a href="http://faulkner.iath.virginia.edu/media/resources/DISPLAYS/FaulknerMapsHP.html">here</a>.
+</p>
+<div class="anchor" id="understanding_data"></div>
+  <h3>Understanding the Data</h3>
+  <p>The data in DY is split across three tables: locations, characters, and, events. Locations and characters denote places and people who are either present or mentioned in the text. Events are the conjunction of locations and characters, and represent one continuous action at one location by an individual character or multiple characters during one discrete period of time. By iterating characters over events by location, it is possible to create a frequency distribution of the different types of characters that appear at specific locations. There are some important philosophical considerations when deciding what data to plot onto the map and how.</p>
+  <p>Although counting characters might seem obvious at first blush, presence and absence have different meanings for demographers and readers of fiction. For a demographer, when a person is not present, either because they are dead or physically somewhere else, they do not count in the survey. In fiction, characters need not be present or even alive to play an important role in the text. The ghost of Hamlet's father is as much part of the play as the other characters, just the same all of the characters in <em>Go Down, Moses</em> are haunted by the actions of the long dead Lucius Quintus Carothers McCaslin. There are therefore compelling reasons to include mentioned and characters who are not technically alive in the demographic count. Still, for the sake of understanding interactions by characters of different races, all mentioned characters were removed from the demography below. In a slightly different vein, not all characters in Yoknapatawpha are countable. There are quite a number of porch-sitters, crowds, angry mobs, town folk, and other non-countable collectives in Faulkner, and even though these groups represent different orders of magnitude, there is no way to make a quantitative distinction between them. As such, all character collectives have been qualified as "groups," without attributing a numerical value to them. When doing a demographic analysis this becomes problematic. Either groups need to be included, and counted as one character, which undercounts the characters at "crowded" events, or groups need to be excluded entirely and only those events with fully individuated characters should be counted. Neither option is optimal, but for the purposes of the demography below the latter option was chosen because it limits the number of unknowns.
+  <p>Another important consideration is the placement and consolidation of locations on an aggregate map. There are 68 individual maps in DY, each custom-made for a particular text. Some of the texts feature locations that are either inside or outside of Yoknapatawpha, but involve a large number of events. To solve this problem, the team created custom insets. The benefit of this approach is that it provides a far more granular view into the world of Yoknapatawpha. The drawback is that map insets overlap when consolidating them. Case in point, the short story "Ad Astra," and the novels, <em>Sanctuary</em> and <em>The Sound and the Fury</em> all have insets in the northeast quadrant of the map, but they signify places as far apart as the Western Front, Cambridge, Massachusetts, and Oxford, Mississippi.  To rectify this problem, all of the locations were remapped either onto the different scaled region, nation, and world maps, or moved and shrunk into the locations that are insets for sites within Yoknapatawpha. Thus, events that were on a "Memphis" inset were moved to the regional location Memphis, and the Compson Place inset was shrunk and moved to slightly southeast of town. These translations sacrifice some of the detail of the individual maps, but this makes a negligible difference when trying to capture population distributions at scale.
+  </p>
+  <div class= "flex-box">
+    <div class = "image-row">
+      <figure>
+      <img src="images/Ad_Astra.png" class="image">
+      <figcaption>Figure 1: "Ad Astra"</figcaption>
+      </figure>
+    </div>
+  <div class = "image-row">
+  <figure>
+  <img src="images/Sanctuary.png" class = "image">
+  <figcaption>Figure 2: <em>Sanctuary</em></figcaption>
+  </figure>
+</div>
+<div class = "image-row">
+<figure>
+<img src="images/Sound_and_the_Fury.png" class = "image">
+<figcaption>Figure 3: <em>The Sound and the Fury</em></figcaption>
+</figure>
+</div>
+</div>
+
+  <p>
+    A more intractable issue is that a location in one text may not be at the same coordinates in another text. There are any number of reasons why this might happen. The first is that Faulkner himself constantly shaped and reshaped his county. The trajectories of roads change, waterways carve out different paths, and the relative distance and direction between locations in different texts. All of this makes locating a specific place within a text an act of interpretation by the editors. One of the cardinal rules with this interpretation is that it should treat the individual text as a coherent world. Of course, it is possible to look at Faulkner's maps and other texts to get a sense of where a location might be, but ultimately most of the locations within a text are "true" only for that text, in as much as an informed decision by an editor has a truth value!  Thus, when there is a discrepancy in the position of a location between several texts, no location is "truer" than another. There are some notable exceptions to this, such as Courthouse Square, which does not move, but by and large locations can fluctuate between texts. A good example of this effect and its consequences for demography is The Armistids' Farm. This is location that moves quite a bit from text to text. Below are three different texts that include the location.
+  </p>
+
+<div id="drag-box">
+<div>
+</p>
+    Drag the images overlays to see how the different Armistid farms and landscapes line up.
+  </p>
+</div>
+    <img src="images/As_I_Lay_Dying.png" class= "draggable drag-image">
+    <img src="images/Hamlet.png" class= "draggable drag-image">
+      <img src="images/Light_In_August.png" class= "draggable drag-image">
+
+</div>
+<p>
+  The Armstids are simple farmers who live in the southeast corner of the map called Frenchman's Bend, there is a clear sense of the general region where their farm is. At a more detailed level, it is much harder to place the farm consistently in the same location, because the surrounding landscape changes quite dramatically. Indeed, placing the location in the exact same place for all three texts would violate the cardinal rule of treating each text as its own world. Perhaps more importantly for the Armistids themselves, placing their house in the same location in the Hamlet as it is in Light in August would put them in the middle of a river! For understanding the individual visualization for a text, the discrepancy between places makes little difference. Yet, when aggregating activity over the course of all of Faulkner's narratives these differences present a conundrum. When the maps are overlaid it appears that there is activity at three different locations, even if the three different locations are representative of the same space. Moreover, the three Armstid Farms have different numbers of characters who appear there in each text. In <em>As I Lay Dying</em> there are a total of 58 characters who appear at events, for <em>Light in August</em> there are 37, and 16 for <em>The Hamlet</em>.  Thus, by aggregating these on a heatmap based on characters at location, it gives the impression that there is more activity at the Armistid farm in <em>As I Lay Dying</em> than the one in <em>The Hamlet</em>, even if they are conceptually the same space. One way to resolve this would be to give Armstids' farm a "true" location, but on principle there is no way to establish such a location. Another way would be to ignore the spatial attributes of the locations, and tabulate the total characters who appear there. This is a useful insight, but without a spatial component the function of mapping Faulkner falls away. A third way, which is used here, is to look at the map by region and not individual sites, as it is clear that even though sites migrate within a region they almost never move outside of a particular area. This is the chosen method for the maps below.
+</p>
+
+
+<div class="anchor" id="demographic_maps"></div>
+  <h3>Literary Cartography and Demographic Maps</h3>
+
+<p>In demography there are two common types of maps, choropleths and heatmaps. Choropleths aggregate the features within a predefined area such as a country, state, or county. Heatmaps show the frequency of a feature across an area. Both types of maps tell different stories. In choropleths the data is shaped by the area. They are good at demonstrating differences between areas, such as state voting results. In heatmaps, the area is generated by the data, and highlights differences across space, such as the rate of infection of a disease. The possibility of creating either map is in some measure dependent on the level of data available. The DY data, which captures where characters are interacting and when, is well suited to heatmaps, though with some modification the data can be turned into a choropleth. <p>
+
+  <h4>Heatmaps</h4>
+<p>
+  In mapping, a heatmap layer is created through a density function that produces features on a color gradient and a pre-defined scaled radius based on the frequency of the variable. In lay terms, this means that as more characters are in one space the color gets darker and the spread gets wider. Without getting into the technical details, the parameters for the map below were set so each heatmap layer was on the same scale and registered any location where more than one character occurred. The reason for ignoring locations where only one character ever occurs is that this leads to stippling across the map, which is visually distorting and actually gives these locations more importance than they merit.
+</p>
+<p>
+  As racial interaction and conflict is one of the most predominant features of Faulkner's fiction. These heatmaps focus on the racial distribution of Faulkner's world in particular, though class, gender, family, and vitality are all different ways to think of demography in Digital Yoknapatawpha. In the database there are eight distinct racial attributes a character can have. Mapping all of these on a heatmap with different colors would be visually overwhelming, and therefore all characters who were not coded as "white," "black," or "Indian" were recoded as having mixed ancestry. This also includes characters whose race is indeterminable, such as Joe Christmas. These four layers were then overlaid with each other to show possible interactions between characters in space, resulting in the following map.
+</p>
+<img class = "text-wrap-right" src="images/Heatmap of Yok 300dpi.jpg">
+<p>
+  This map shows all of the interactions in Faulkner's fiction. What is immediately noticeable with this map is that the racial distribution of areas is uneven. Faulkner does not equally distribute every type of character in every type of area, but rather conceives of different places in Yoknapatawpha having a different racial composition. Following this logic, directly north of the town is the area where Native Americans appear.  Meanwhile, the areas to the northeast and the northwest of town have more characters of mixed ancestry. These locations represent the bulk of the events that happen at the Sutpen plantation in Absalom, Absalom! and the McCaslin plantation and the site of the former Sutpen location in the Big Bottom in Go Down, Moses. Notably, these are two texts that deal with the problems of the color line, and call into question the neat distinction between white and black that undergirded slavery and segregation in the South. At the locations closer to town, there are relatively fewer characters outside of the white and black binary. The Sartoris and Compson places both maintain strictly segregated households with very few mixed ancestry characters appearing at these locations. The exception is Elnora Strother, who it is later revealed, is the daughter of John Sartoris and an unnamed black woman. Likewise, the town of Jefferson may see some interaction between white and non-white characters, but the majority of the people who appear here are white. This trend is even more pronounced in Frenchman's Bend, where the majority of the population is white.
+</p>
+<p>
+  While the above map provides a reasonable overview, it is also distorting because it flattens out time. DY captures time in Faulkner in multiple ways, the most salient of which are narrative time and publication date. The events stretch from the birth of Jesus to 1980 in narrative time, at the same time the data also represents thirty years of writing. The animation of either variable will result in the same map as above, but the way it arrives there is different. When animated over narrative time, the different origins of each area on the map becomes clear. While it would be inaccurate to ascribe a total vision of Yoknapatawpha county to Faulkner, he revised it over and over again, the spatial organization of his fictional world is consistently patterned over a thirty-year period. When his corpus is compressed into one narrative, the Native American events are the first to appear at the beginning of the 18th century concurrent with the events at the McCaslin place in the northeast of the county. Then the other great northern plantation, Sutpen's hundred starts to see activity, followed by a glut of events during the Civil War at the Sartoris planation. At the turn of the nineteenth century, the contours of Jefferson and the hamlet of Frenchman's Bend become more visible. With many early twentieth century events taking place at the Compson estate. By the end of the First World War many of the spaces of Yoknapatawpha have already been traversed, and what starts to occur is the county gradually becoming more diverse in terms of the types of characters who appear, notably those of mixed ancestry. A reverse trend takes place after the Second World War when the predominant characters in events are white and the focus appears to shift towards Frenchman's Bend on the exact opposite part of the map.
+</p>
+  <div style="text-align:center;">
+<video controls="" autoplay="" name="media" width=75% align=center> <source src="http://faulkner.iath.virginia.edu/demo/Racial_Distribution_by_Event_Chronology1.mp4" type="video/mp4"></video>
+</div>
+<p></p>
+<p>
+  The publication map tells a similar story in a different order. Here it is not so much chronological time in the narrative that corresponds to an increase of mixed ancestry characters, but publication date. The map gets notably more populated with more mixed ancestry characters later in Faulkner's career. This is particularly true of texts like Absalom, Absalom!, Go Down, Moses, and The Reivers. On the whole though, there are a non-trivial amount of texts that feature Anglo-Americans almost exclusively. The Snopes trilogy especially stands out, and there are very few non-white characters who participate in events in Frenchman's Bend. None of this should be read as evidence of Faulkner's racial politics one way or another, but rather that he engaged in different subject matter throughout his career. His writing was not only varied in the kinds of people he wrote about, but was imaginatively connected to where those people were interacting with one another.
+</p>
+<div style="text-align:center;">
+<video controls="" autoplay="" name="media" width=75% align=center> <source src="http://faulkner.iath.virginia.edu/demo/Racial_Distribution_by_Event_Chronology1.mp4" type="video/mp4"></video>
+</div>
+
+  <h4>Making a Choropleth</h4>
+  <p>As previously noted, choropleths show the relative distribution of features within a specific area. There are two challenges for creating such a map with the DY data. First, Faulkner did not have predefined administrative areas on his own maps. True, he does describe different "beats," but these are in no way defined in the text. Second, a more general problem with choropleths is that it is hard to show population distributions for several variables if there is one predominant homogenous group. In the case of DY, these are the white folks. The number of white characters far outstrips that of non-whites, and therefore any type of diversity would barely register on a choropleth. One way to circumvent both of these issues is to manually create administrative areas based on thematic connections, and then render the statistics for each area as a diagram. This is a visually cruder method, but gives greater insight into the areas, because all eight race types can be represented and it is easier to visually distinguish relative proportions. The drawback is that there is no way to animate this layer without causing a highly disjunctive experience for the viewer. The effect would be one where thirteen pie charts simultaneously change their relative proportions over time!
+<img class="text-wrap-left" src="images/Yok Choropleth100DPI.jpg">
+    <p>
+      The choropleth below bears out in more granular detail what the above heatmaps already showed somewhat more intuitively. The predominant group in Yoknapatawpha is white, and the more north Faulkner's imagination travels the higher the possibility of different types of characters increases. The more densely populated centers such as Jefferson and Frenchman's Bend appear to offer a check on any type of transgression of Jim Crow social codes and Laws. In similar fashion the wider world also has fewer non-white characters. The curious exception is the breakdown at the regional scale. This is actually one of the more diverse areas of the fiction, and, in particular, Memphis, which often acts as an antipode to Jefferson morality, has people from different walks of life rubbing shoulders. The statistics for each diagram are also available below.
+  </p>
+
+<div class="anchor" id="conclusions"></div>
+<h3>Cautions and Conclusions</h3>
+<p>Heatmaps and choropleths are incredibly powerful tools to describe space at scale. Their power can also have a distorting effect. Few elections are complete without cartographers reminding the public and pundits that just because a district, county, state, or country voted in a particular way, does not mean everyone in that area monolithically shares those beliefs. Much the same, viewing spatialized aggregations of DY data reveals the contours of life Faulkner's fiction, but simultaneously obscures an individual character's experience. Fiction, after all, does not operate on the level of the general, but on that of the particular. These maps are best viewed as the context in which Faulkner's fiction transpires. They cannot begin to describe the nuanced, complex, and sometimes explosive, inter-racial interactions that mark so much of his writing, but at the same time they can give a sense as to why those events play out the way they do in one place versus another.
+</p>
+<p>They also provide a larger insight into the world of the Jim Crow South. The legal apartheid regime that was in place in the South before the Civil Rights movement was uniformly dehumanizing to non-whites, but, at least based on Faulkner's telling, this dehumanization was not uniformly experienced. Race also had a spatial component. Under the watchful gaze of the Jefferson community, racial boundaries were strictly maintained. Moving farther away from population centers, the strict color line becomes blurrier, and while it would be a mischaracterization to conceive of this as transgressive, it, in any event, makes the strict divisions between black and white appear for more constructed than natural. In this sense, Faulkner's uneven demography makes hints at a possible future demographic mosaic that is always yet to come, even if Faulkner himself might have been unclear on how to get there.
+</p>
+
+<div class="anchor" id="further"></div>
+<h3>Further Reading</h3>
+<p>These maps are most powerful when they are deployed with other research methodologies and brought to bear on a specific research question. The recently published paper, <a href="https://culturalanalytics.org/article/14112-familial-places-in-jim-crow-spaces-kinship-demography-and-the-color-line-in-william-faulkner-s-yoknapatawpha-county"><em>Familial Places in Jim Crow Spaces: Kinship, Demography, and the Color Line in William Faulkner's Yoknapatawpha County</em></a> does exactly that and explores how family was a key means through which characters in Faulkner's world navigated the color line.</p>
+
+
+<h3>Citing This Source</h3>
+<div class="anchor" id="citing"></div>
+  <div class="row"><p class="citation">Burgers, Johannes. "Visualizing Racial Demography in Yoknapatawpha." Added to Project: 2020. <i>Digital Yoknapatawpha</i>. University of Virginia. http://faulkner.iath.virginia.edu/the_art_of_faulkner_technique.html</p></div>
+
+
+          </div>
+      <p id="watermark">Last Update: 2020-07-23</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+
+interact('.draggable')
+  .draggable({
+    // enable inertial throwing
+    inertia: true,
+    // keep the element within the area of it's parent
+    modifiers: [
+      interact.modifiers.snap({
+        targets: [
+          interact.createSnapGrid({ x: 100, y: 100 })
+        ],
+        range: Infinity,
+        relativePoints: [ { x: 0, y: 0 } ]
+      }),
+      interact.modifiers.restrictRect({
+        restriction: 'parent',
+        endOnly: true
+      })
+    ],
+    // enable autoScroll
+    autoScroll: true,
+
+    listeners: {
+      // call this function on every dragmove event
+      move: dragMoveListener,
+
+      // call this function on every dragend event
+      end (event) {
+        var textEl = event.target.querySelector('p')
+
+        textEl && (textEl.textContent =
+          'moved a distance of ' +
+          (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
+                     Math.pow(event.pageY - event.y0, 2) | 0))
+            .toFixed(2) + 'px')
+      }
+    }
+  })
+
+function dragMoveListener (event) {
+  var target = event.target
+  // keep the dragged position in the data-x/data-y attributes
+  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+
+  // translate the element
+  target.style.webkitTransform =
+    target.style.transform =
+      'translate(' + x + 'px, ' + y + 'px)'
+
+  // update the posiion attributes
+  target.setAttribute('data-x', x)
+  target.setAttribute('data-y', y)
+}
+
+
+
+$(document).ready(function () {
+
+  $('.nav-link').click(function(e) {
+
+           $(".navbar-collapse").removeClass('in');
+           $(".navbar-collapse").addClass('collapse');
+   });
+});
+
+
+</script>
+
+</body>
