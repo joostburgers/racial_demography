@@ -1,6 +1,7 @@
 
 .map-container{
   display: flex;
+  align-items: stretch;
   flex-flow: row wrap;
   margin: auto;
   max-width: 90%;
@@ -9,7 +10,8 @@
   padding-right: : 0px;
   padding-bottom: 40px;
   padding-left: 40px;
-  padding-top: 10px;
+  padding-top: 40px;
+
 }
 
 
@@ -22,32 +24,29 @@
   }
 
 .image-container{
-  background-color: #F0F0F0;
 
-  display: inline-block;
+ box-sizing: content-box;
+  display: block;
   min-height:500px;
   height: 100%;
-  width:100%;
-  min-width: 320px;
-  border: 1px solid black;
+  width: 450px;
+
+    border: 1px solid black;
 }
 
 .panel-row{
-display: inline;
+display: inline-block;
 text-align: left;
 flex: 1 0 0;
-width: inherit;
-max-width: 449px;
+max-width: calc(45% - 40px);
 min-width: 320px;
- list-style:none;
- list-style-type:none;
 
 }
 
 .overlay {
   position: absolute;
   max-width: 450px;
-  width:100%;
+  width:75%;
       display: inline-flex;
   opacity: .33;
           }
@@ -68,7 +67,7 @@ min-width: 320px;
     z-index: 99;
     position: absolute;
     max-width: 450px;
-    width:50%;
+    width:75%;
     display: inline-flex;
 }
 
