@@ -219,18 +219,18 @@
                 <img src="images/MosesNovel-manmade-revised.png" id="MosesManmadeImage" class="overlay manmade">
                 <img src="images/Go_Down_Moses_Glyph.PNG" id="MosesGlyphImage" class="overlay-glyph">
 
-                <!-- <div class = "check box" id="image2">
-        <img src="images/OldPeople-manmade-revised.png" id="OldPeopleManmadeImage" class= "overlay manmade">
-        <img src="images/OldPeople-natural-revised.png" id="OldPeopleNaturalImage"class= "overlay natural">
-        <img src="images/Old_People_Glyph.PNG" id ="OldPeopleGlyphImage" class= "overlay-glyph">
-    </div>
+
+                <img src="images/OldPeople-manmade-revised.png" id="OldPeopleManmadeImage" class="overlay manmade">
+                <img src="images/OldPeople-natural-revised.png" id="OldPeopleNaturalImage" class="overlay natural">
+                <img src="images/Old_People_Glyph.PNG" id="OldPeopleGlyphImage" class="overlay-glyph">
 
 
-    <div class = "check box"id="image3">
-      <img src="images/AJustice-natural.png" id="AJusticeNaturalImage" class= "overlay natural" >
-      <img src="images/AJustice-manmade.png" id="AJusticeManmadeImage" class= "overlay manmade">
-      <img src="images/A_Justice_Glyph.PNG" id= "AJusticeGlyphImage" class= "overlay-glyph">
-    </div> -->
+
+
+                <img src="images/AJustice-natural.png" id="AJusticeNaturalImage" class="overlay natural">
+                <img src="images/AJustice-manmade.png" id="AJusticeManmadeImage" class="overlay manmade">
+                <img src="images/A_Justice_Glyph.PNG" id="AJusticeGlyphImage" class="overlay-glyph">
+
               </div>
             </div>
           </div>
@@ -374,16 +374,9 @@
 
       $('input[type="checkbox"]').change(function(e) {
 
-
-
         var checked = $(this).prop("checked");
         var container = $(this).parent();
         var siblings = container.siblings();
-
-        console.log(container)
-
-
-
 
         container.find('input[type="checkbox"]').prop({
           indeterminate: false,
@@ -411,28 +404,25 @@
 
           } else if (all && !checked) {
 
-            parent.children('input[type="checkbox"]').prop("checked", checked);
-            parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
+            parent.children('input[type="checkbox"]').prop('checked', checked);
+            parent.children('input[type="checkbox"]').prop('indeterminate', (parent.find('input[type="checkbox"]:checked').length > 0));
             checkSiblings(parent);
 
           } else {
 
-            el.parents("li").children('input[type="checkbox"]').prop({
+            el.parents('li').children('input[type="checkbox"]').prop({
               indeterminate: true,
-              checked: false
+              checked: false,
             });
-
           }
-
         }
 
         checkSiblings(container);
-        console.log($('.subOption'))
 
-        var naturalChecked = $('input:checkbox.naturalcheck:checked').length
-        var manmadeChecked = $('input:checkbox.manmadecheck:checked').length
-        $('.natural').fadeTo("slow", 1 / naturalChecked)
-        $('.manmade').fadeTo("slow", 1 / manmadeChecked)
+        var naturalChecked = $('input:checkbox.naturalcheck:checked').length;
+        var manmadeChecked = $('input:checkbox.manmadecheck:checked').length;
+        $('.natural').fadeTo('slow', 1 / naturalChecked);
+        $('.manmade').fadeTo('slow', 1 / manmadeChecked);
 
         var currentlyChecked = $('.subOption');
         var index;
@@ -445,16 +435,7 @@
             $('#' + imageID + 'Image').hide();
           }
         }
-
-
-        console.log(naturalChecked)
-
-
-        console.log($('.option'))
-
       });
-
-
     });
   </script>
 
