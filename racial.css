@@ -1,104 +1,101 @@
-
-.map-container{
+.map-container {
   display: flex;
-  align-items: stretch;
+  justify-content: space-around;
   flex-flow: row wrap;
   margin: auto;
   max-width: 90%;
+  min-width: 470px;
   background-color: #F0F0F0;
   border-radius: 10px;
-  padding-right: : 0px;
+  /* padding-right: : 0px;
   padding-bottom: 40px;
   padding-left: 40px;
-  padding-top: 40px;
-
+  padding-top: 40px; */
 }
 
+.controlpanel {
+  display: inline-block;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 20px;
+}
 
-  .controlpanel{
-    display:inline-block;
-    background-color: white;
-    border-radius: 5px;
-    border: 1px solid black;
-    padding:20px;
-  }
-
-.image-container{
-
- box-sizing: content-box;
+.image-container {
   display: block;
-  min-height:500px;
-  height: 100%;
-  width: 450px;
-
-    border: 1px solid black;
+  min-height: 500px;
+  width: 100%;
+  max-width: 450px;
+  /* border: 1px solid black; */
+  box-shadow: 2px 2px 4px grey;
 }
 
-.panel-row{
-display: inline-block;
-text-align: left;
-flex: 1 0 0;
-max-width: calc(45% - 40px);
-min-width: 320px;
-
+.panel-row {
+  display: inline-block;
+  flex: 1 0 0;
+  max-width: calc(45% - 40px);
+  min-width: 450px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .overlay {
   position: absolute;
   max-width: 450px;
-  width:75%;
-      display: inline-flex;
+  width: 100%;
+
   opacity: .33;
-          }
-
-.natural{
-  opactiy:0.33;
-}
-.manmade{
-  opacity:0.33;
 }
 
-.menu-glyph{
-  width:20px;
+.natural {
+  opactiy: 0.33;
+}
+
+.manmade {
+  opacity: 0.33;
+}
+
+.menu-glyph {
+  width: 20px;
   margin-left: 5px;
   margin-bottom: 5px;
 }
-.overlay-glyph{
-    z-index: 99;
-    position: absolute;
-    max-width: 450px;
-    width:75%;
-    display: inline-flex;
+
+.overlay-glyph {
+  z-index: 99;
+  position: absolute;
+  max-width: 450px;
+  width: 100%;
+  display: inline-flex;
 }
 
-label{
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-left: 15px;
   font-style: normal;
   font-weight: 500;
 }
-.subcategory
-{
+
+.subcategory {
   font-family: inherit;
   margin-left: 15px;
   font-style: normal;
   font-size: 95%;
 }
 
-.instructions{
-
-  margin-bottom:20px;
+.instructions {
+  margin-bottom: 20px;
 }
 
-.text-wrap-right{
-width: 70%;
-float: right;
-margin-left: 10px;
-margin-bottom: 20px;
+.text-wrap-right {
+  width: 70%;
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
 
-.text-wrap-left{
-width: 60%;
-float: left;
-margin: 10px;
+.text-wrap-left {
+  width: 60%;
+  float: left;
+  margin: 10px;
 }
