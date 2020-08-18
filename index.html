@@ -46,7 +46,7 @@
   <script src="https://momentjs.com/downloads/moment.js"></script> -->
   <script src="jquery.min.js"></script>
   <script src="jquery-ui.min.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script> 
+  <script src="bootstrap/js/bootstrap.min.js"></script>
   <script src="dropdown.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
@@ -149,15 +149,68 @@
   <p>
     A more intractable issue is that a location in one text may not be at the same coordinates in another text. There are any number of reasons why this might happen. The first is that Faulkner himself constantly shaped and reshaped his county. The trajectories of roads change, waterways carve out different paths, and the relative distance and direction between locations in different texts. All of this makes locating a specific place within a text an act of interpretation by the editors. One of the cardinal rules with this interpretation is that it should treat the individual text as a coherent world. Of course, it is possible to look at Faulkner's maps and other texts to get a sense of where a location might be, but ultimately most of the locations within a text are "true" only for that text, in as much as an informed decision by an editor has a truth value!  Thus, when there is a discrepancy in the position of a location between several texts, no location is "truer" than another. There are some notable exceptions to this, such as Courthouse Square, which does not move, but by and large locations can fluctuate between texts. A good example of this effect and its consequences for demography is The Armistids' Farm. This is location that moves quite a bit from text to text. Below are three different texts that include the location.
   </p>
-  <span class="overlay">Drag the image overlays to see how the different Armistid farms and landscapes line up.</p>
-  </span>
-</p>
-<div id="drag-box">
 
-    <img src="images/AILD.png" class= "draggable drag-image">
-    <img src="images/Hamlet.png" class= "draggable drag-image">
-      <img src="images/LIA.png" class= "draggable drag-image">
+<div class= "map-container">
+<div class= "panel-row">
+<h3> Map Feature Comparison </h3>
+<div class= "instructions">Check and uncheck the boxes to select different layers.</div>
+<div class= "controlpanel">
+    <ul>
+    <li>
+    <input type="checkbox" id= "1" value="check" class="option" checked>
+    <label for="option"><em> Go Down, Moses</em></label>
+    <ul>
+       <li class= subcategory><label><input type="checkbox" class="subOption manmadecheck" id="MosesManmade" checked> Man made features</label></li>
+       <li class= subcategory><label><input type="checkbox" class="subOption naturalcheck" id="MosesNatural" checked> Natural features</label></li>
+       <li class= subcategory><label><input type="checkbox" class="subOption" id = "MosesGlyph" checked><img src="images/Go_Down_Moses_Glyph_menu.PNG" class="menu-glyph"> Sam Fathers shop</label></li>
+    </ul>
+  </li>
+  <li>
+  <input type="checkbox" id = "2" value="check" class="option" checked>
+  <label for="option">"The Old People"</label>
+  <ul>
+       <li class= subcategory><label><input type="checkbox" class="subOption manmadecheck" id="OldPeopleManmade" checked> Man made features</label></li>
+       <li class= subcategory><label><input type="checkbox" class="subOption naturalcheck" id="OldPeopleNatural" checked> Natural features</label></li>
+       <li class= subcategory><label><input type="checkbox" class="subOption" id="OldPeopleGlyph" checked> <img src="images/Old_People_Glyph_menu.PNG" class="menu-glyph">Sam Fathers shop</label></li>
+  </ul>
+  </li>
+  <li>
+  <input type="checkbox" id = "3" value="check" class="option" checked>
+  <label for="option"> "A Justice"</label>
+  <ul>
+       <li class= subcategory><label><input type="checkbox" class="subOption manmadecheck" id="AJusticeManmade" checked> Man made features</label></li>
+       <li class= subcategory><label><input type="checkbox" class="subOption naturalcheck" id="AJusticeNatural" checked> Natural features</label></li>
+       <li class= subcategory><label><input type="checkbox" class="subOption" id="AJusticeGlyph" checked> <img src="images/A_Justice_Glyph_menu.PNG" class="menu-glyph">Sam Fathers shop</label></li>
+  </ul>
+  </li>
+  </ul>
 </div>
+  </div>
+<div class = "panel-row">
+  <div class = "image-container">
+    <div class="check box" id="image1">
+        <img src="images/MosesNovel-natural.png" id= "MosesNaturalImage" class = "overlay natural">
+        <img src="images/MosesNovel-manmade-revised.png" id= "MosesManmadeImage" class= "overlay manmade">
+        <img src="images/Go_Down_Moses_Glyph.PNG" id= "MosesGlyphImage" class= "overlay-glyph">
+    </div>
+
+  <div class = "check box" id="image2">
+        <img src="images/OldPeople-manmade-revised.png" id="OldPeopleManmadeImage" class= "overlay manmade">
+        <img src="images/OldPeople-natural-revised.png" id="OldPeopleNaturalImage"class= "overlay natural">
+        <img src="images/Old_People_Glyph.PNG" id ="OldPeopleGlyphImage" class= "overlay-glyph">
+    </div>
+
+
+    <div class = "check box"id="image3">
+      <img src="images/AJustice-natural.png" id="AJusticeNaturalImage" class= "overlay natural" >
+      <img src="images/AJustice-manmade.png" id="AJusticeManmadeImage" class= "overlay manmade">
+      <img src="images/A_Justice_Glyph.PNG" id= "AJusticeGlyphImage" class= "overlay-glyph">
+    </div>
+  </div>
+ </div>
+</div>
+
+
 
 
 <p>
@@ -228,59 +281,7 @@
 
 <script>
 
-interact('.draggable')
-  .draggable({
-    // enable inertial throwing
-    inertia: true,
-    // keep the element within the area of it's parent
-    modifiers: [
-      interact.modifiers.snap({
-        targets: [
-          interact.createSnapGrid({ x: 50, y: 50 })
-        ],
-        range: Infinity,
-        relativePoints: [ { x: 0, y: 0 } ]
-      }),
-      interact.modifiers.restrictRect({
-        restriction: 'parent',
-        endOnly: true
-      })
-    ],
-    // enable autoScroll
-    autoScroll: true,
 
-    listeners: {
-      // call this function on every dragmove event
-      move: dragMoveListener,
-
-      // call this function on every dragend event
-      end (event) {
-        var textEl = event.target.querySelector('p')
-
-        textEl && (textEl.textContent =
-          'moved a distance of ' +
-          (Math.sqrt(Math.pow(event.pageX - event.x0, 2) +
-                     Math.pow(event.pageY - event.y0, 2) | 0))
-            .toFixed(2) + 'px')
-      }
-    }
-  })
-
-function dragMoveListener (event) {
-  var target = event.target
-  // keep the dragged position in the data-x/data-y attributes
-  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
-
-  // translate the element
-  target.style.webkitTransform =
-    target.style.transform =
-      'translate(' + x + 'px, ' + y + 'px)'
-
-  // update the posiion attributes
-  target.setAttribute('data-x', x)
-  target.setAttribute('data-y', y)
-}
 
 
 
@@ -291,6 +292,93 @@ $(document).ready(function () {
            $(".navbar-collapse").removeClass('in');
            $(".navbar-collapse").addClass('collapse');
    });
+
+
+
+   $('input[type="checkbox"]').change(function(e) {
+
+
+
+  var checked = $(this).prop("checked");
+  var container = $(this).parent();
+  var siblings = container.siblings();
+
+console.log(container)
+
+
+
+
+  container.find('input[type="checkbox"]').prop({
+    indeterminate: false,
+    checked: checked
+  });
+
+  function checkSiblings(el) {
+
+    var parent = el.parent().parent(),
+        all = true;
+
+    el.siblings().each(function() {
+      let returnValue = all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+      return returnValue;
+    });
+
+    if (all && checked) {
+
+      parent.children('input[type="checkbox"]').prop({
+        indeterminate: false,
+        checked: checked
+      });
+
+      checkSiblings(parent);
+
+    } else if (all && !checked) {
+
+      parent.children('input[type="checkbox"]').prop("checked", checked);
+      parent.children('input[type="checkbox"]').prop("indeterminate", (parent.find('input[type="checkbox"]:checked').length > 0));
+      checkSiblings(parent);
+
+    } else {
+
+      el.parents("li").children('input[type="checkbox"]').prop({
+        indeterminate: true,
+        checked: false
+      });
+
+    }
+
+  }
+
+  checkSiblings(container);
+  console.log($('.subOption'))
+
+  var naturalChecked = $('input:checkbox.naturalcheck:checked').length
+  var manmadeChecked = $('input:checkbox.manmadecheck:checked').length
+  $('.natural').fadeTo("slow", 1/naturalChecked)
+  $('.manmade').fadeTo("slow", 1/manmadeChecked)
+
+  var currentlyChecked = $('.subOption');
+  var index;
+
+  for (index = 0; index < currentlyChecked.length; ++index) {
+      imageID = currentlyChecked[index].id;
+      if (currentlyChecked[index].checked === true) {
+        $('#'+imageID+'Image').show();
+      }
+      else{
+        $('#'+imageID+'Image').hide();
+      }
+    }
+
+
+  console.log (naturalChecked)
+
+
+console.log($('.option'))
+
+});
+
+
 });
 
 

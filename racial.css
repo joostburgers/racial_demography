@@ -1,30 +1,101 @@
 
-#drag-box{
-position:relative;
-border:1px solid;
-border-color: black;
-border-radius: 5px;
-margin-left:-100px;
-margin-right: -100px;
-margin-top: 10px;
-margin-bottom: 10px;
-padding-left: 10px;
-padding-right: 5px;
-background-color: rgba(255,255,240,.5);
+.map-container{
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto;
+  width: 90%;
+  background-color: #F0F0F0;
+  border-radius: 10px;
+  min-height: 70%;
+  padding: 20px;
+}
+/*
+.overlay-container-left{
+    position: relative;
+  margin-top:20px;
+  margin-bottom: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
+  float:left;
 }
 
-.drag-image{
-  width: calc(33% - 20px);
-  margin:10px;
-  touch-action: none;
-  user-select: none;
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
+.overlay-container-right{
+  position: relative;
+  float:left;
+  margin-left:5%;
+  margin-right: 5%;
+  margin-top:2%;
+  margin-bottom: 2%;
+  } */
+
+  .controlpanel{
+    display:inline-block;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding:20px;
+  }
+
+.image-container{
+  background-color: #F0F0F0;
+  display: inline-block;
+  min-height:400px;
 }
 
-.overlay{
-  font-weight: bold;
-  margin-left: -100px;
+.panel-row{
+display: inline;
+text-align: left;
+flex: 1 0 0;
+max-width: calc(50%-20px);
+min-width: 320px;
+ list-style:none;
+ list-style-type:none;
+
+}
+
+.overlay {
+  position: absolute;
+  margin: 20px;
+  max-height: 55%;
+  display: inline-flex;
+  opacity: .33;
+          }
+
+.natural{
+  opactiy:0.33;
+}
+.manmade{
+  opacity:0.33;
+}
+
+.menu-glyph{
+  width:20px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.overlay-glyph{
+    z-index: 99;
+    position: absolute;
+    max-height: 60%;
+    display: block;
+}
+label{
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin-left: 15px;
+  font-style: normal;
+  font-weight: 500;
+}
+.subcategory
+{
+  font-family: inherit;
+  margin-left: 15px;
+  font-style: normal;
+  font-size: 95%;
+}
+
+.instructions{
+
+  margin-bottom:20px;
 }
 
 .text-wrap-right{
