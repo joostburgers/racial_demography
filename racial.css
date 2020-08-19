@@ -93,6 +93,12 @@ label {
   margin-left: 40px;
 }
 
+.video-frame{
+  margin: 20px 0px 20px 0px;
+  
+    display: flex;
+    justify-content: center;
+}
 .text-wrap-right {
   width: 70%;
   float: right;
