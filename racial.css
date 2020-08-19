@@ -87,6 +87,12 @@ label {
   margin-bottom: 20px;
 }
 
+.image-title{
+  font-size: 200%;
+  font-style: italic;
+  margin-left: 40px;
+}
+
 .text-wrap-right {
   width: 70%;
   float: right;

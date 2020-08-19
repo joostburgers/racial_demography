@@ -273,7 +273,11 @@
             therefore all characters who were not coded as "white," "black," or "Indian" were recoded as having mixed ancestry. This also includes characters whose race is indeterminable, such as Joe Christmas. These four layers were then overlaid
             with each other to show possible interactions between characters in space, resulting in the following map.
           </p>
-          <img class="text-wrap-right" src="images/Heatmap of Yok 300dpi.jpg">
+          <figure class= "text-wrap-right">
+            <img src="images/Heatmap300DPI_color.png" class="image">
+            <figcaption>Figure 4: Heatmap of Character Activity. For this heatmap, the eight character race categories were sorted into four broader categories. The map shows where the four different types of characters appear across all the novels</figcaption>
+          </figure>
+
           <p>
             This map shows all of the interactions in Faulkner's fiction. What is immediately noticeable with this map is that the racial distribution of areas is uneven. Faulkner does not equally distribute every type of character in every type of
             area, but rather conceives of different places in Yoknapatawpha having a different racial composition. Following this logic, directly north of the town is the area where Native Americans appear. Meanwhile, the areas to the northeast and
@@ -294,8 +298,8 @@
             the Second World War when the predominant characters in events are white and the focus appears to shift towards Frenchman's Bend on the exact opposite part of the map.
           </p>
           <div style="text-align:center;">
-            <video controls="" name="media" width=75% align=center>
-              <source src="videos/Racial_Distribution_by_Event_Chronology.mp4" type="video/mp4"></video>
+            <video controls="" name="media" width=75% align=center poster="videos/Racial_Distribution_by_Event_Chronology_poster.png">
+              <source src="videos/Racial_Distribution_by_Event_Chronology_revised.mp4" type="video/mp4"></video>
           </div>
 
           <p>
@@ -423,7 +427,6 @@
         var manmadeChecked = $('input:checkbox.manmadecheck:checked').length;
         $('.natural').fadeTo('slow', 1 / naturalChecked);
         $('.manmade').fadeTo('slow', 1 / manmadeChecked);
-
         var currentlyChecked = $('.subOption');
         var index;
 
