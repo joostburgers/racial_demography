@@ -47,8 +47,9 @@ img.heatmap{
   margin: auto;
   max-width: 90%;
   min-width: 470px;
-  background-color: #F0F0F0;
-  border-radius: 10px;
+  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.1), rgba(253,245,230,.7));
+  border: 1px solid black;
+  border-radius: 15px;
 
 }
 
@@ -79,12 +80,14 @@ img.heatmap{
   min-height: 500px;
   width: 100%;
   max-width: 450px;
+  background-color: white;
   box-shadow: 2px 2px 4px grey;
 }
 
 
 
 .overlay {
+
   position: absolute;
   max-width: 450px;
   width: 100%;
@@ -97,9 +100,10 @@ img.heatmap{
   flex-wrap:wrap;
   justify-content: flex-start;
     margin: auto;
-  max-width: 90%;
-  background-color: #F0F0F0;
-  border-radius: 10px;
+      max-width: 90%;
+  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.1), rgba(253,245,230,1));
+  border: 1px solid black;
+  border-radius: 15px;
 
 }
 
@@ -256,14 +260,41 @@ label::before {
   margin-left: 40px;
 }
 
-.video-frame{
-  margin: 20px 0px 20px 0px;
-      display: flex;
-    justify-content: center;
+.video-highlight{
+  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.1), rgba(253,245,230,1));
+  margin: auto;
+  width: 90%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 15px;
 }
+.animation-title{
+color:Peru;
+font-size: 200%;
+font-style: italic;
+}
+
+.video-frame-right{
+  margin: 20px 20px 20px 20px;
+      float:right;
+width:55%;
+box-shadow: 2px 2px 4px grey;
+border-radius: 0px;
+}
+
+.video-frame-left{
+  margin: 20px 20px 20px 20px;
+      float:left;
+width:55%;
+box-shadow: 2px 2px 4px grey;
+border-radius: 0px;
+}
+
 .text-wrap-right {
-  width: 70%;
-  float: right;
+  width: 90%;
+  margin: auto;
   margin-left: 10px;
   margin-bottom: 20px;
   image-rendering: crisp-edges;
@@ -271,7 +302,7 @@ label::before {
 }
 
 .text-wrap-left {
-  width: 60%;
+  width: 55%;
   float: left;
   margin: 10px;
   image-rendering: crisp-edges;
