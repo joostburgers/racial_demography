@@ -49,7 +49,7 @@ img.heatmap{
   margin-bottom: 40px;
   max-width: 90%;
   min-width: 470px;
-  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.1), rgba(253,245,230,.7));
+  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.0), rgba(253,245,230,1));
   border: 1px solid black;
   border-radius: 15px;
 
@@ -106,7 +106,7 @@ img.heatmap{
     margin-bottom: 40px;
       max-width: 90%;
 
-  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.1), rgba(253,245,230,1));
+  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.0), rgba(253,245,230,1));
   border: 1px solid black;
   border-radius: 15px;
 
@@ -266,7 +266,7 @@ label::before {
 }
 
 .video-highlight{
-  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.1), rgba(253,245,230,1));
+  background-image: linear-gradient(to bottom right, rgba(253,245,230,0.0), rgba(253,245,230,1));
   margin: auto;
   width: 90%;
   margin-top: 40px;
