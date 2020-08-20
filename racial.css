@@ -45,6 +45,8 @@ img.heatmap{
   justify-content: space-around;
   flex-flow: row wrap;
   margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
   max-width: 90%;
   min-width: 470px;
   background-image: linear-gradient(to bottom right, rgba(253,245,230,0.1), rgba(253,245,230,.7));
@@ -100,7 +102,10 @@ img.heatmap{
   flex-wrap:wrap;
   justify-content: flex-start;
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
       max-width: 90%;
+
   background-image: linear-gradient(to bottom right, rgba(253,245,230,0.1), rgba(253,245,230,1));
   border: 1px solid black;
   border-radius: 15px;
@@ -293,8 +298,8 @@ border-radius: 0px;
 }
 
 .text-wrap-right {
-  width: 90%;
-  margin: auto;
+  width: 60%;
+  float: right;
   margin-left: 10px;
   margin-bottom: 20px;
   image-rendering: crisp-edges;
@@ -302,7 +307,7 @@ border-radius: 0px;
 }
 
 .text-wrap-left {
-  width: 55%;
+  width: 60%;
   float: left;
   margin: 10px;
   image-rendering: crisp-edges;
