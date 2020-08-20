@@ -273,10 +273,41 @@
             therefore all characters who were not coded as "white," "black," or "Indian" were recoded as having mixed ancestry. This also includes characters whose race is indeterminable, such as Joe Christmas. These four layers were then overlaid
             with each other to show possible interactions between characters in space, resulting in the following map.
           </p>
-          <figure class= "text-wrap-right">
+
+
+          <div class="heatmap-container">
+            <div class="heatmap-row-small">
+              <h3> Heatmap Layer Comparison </h3>
+              <div class="instructions">Check and uncheck the legend entries to show and hide the different heatmap layers.</div>
+              <div class="controlpanel">
+                <ul>
+                       <li class=subcategory><input type="checkbox" class="race-checkbox" id="HeatmapWhite" checked><label for="HeatmapWhite"> <img src="images/WhiteLegendChecked.png" class="race-glyph"></label></li>
+                      <li class=subcategory><input type="checkbox" class="race-checkbox" id="HeatmapAfricanAmerican" checked><label for="HeatmapAfricanAmerican"><img src="images/AfricanAmericanLegendChecked.png" class="race-glyph"></label></li>
+                      <li class=subcategory><input type="checkbox" class="race-checkbox" id="HeatmapMixedAncestry" checked><label for="HeatmapMixedAncestry"><img src="images/MixedAncestryLegendChecked.png" class="race-glyph"></label></li>
+                      <li class=subcategory><input type="checkbox" class="race-checkbox" id="HeatmapNativeAmerican" checked> <label for="HeatmapNativeAmerican"><img src="images/NativeAmericanLegendChecked.png" class="race-glyph"></label></li>
+                    </ul>
+
+              </div>
+            </div>
+            <div class="heatmap-row-large">
+              <div class="heatmap-frame">
+                <img src="images/HeatmapBaseLayer.png" id="HeatmapBaseLayerImage" class="heatmap">
+                <img src="images/HeatmapWhite.png" id="HeatmapWhiteImage" class="heatmap">
+                <img src="images/HeatmapAfricanAmerican.png" id="HeatmapAfricanAmericanImage" class="heatmap">
+                <img src="images/HeatmapMixedAncestry.png" id="HeatmapMixedAncestryImage" class="heatmap">
+                <img src="images/HeatmapNativeAmerican.png" id="HeatmapNativeAmericanImage" class="heatmap">
+                <img src="images/HeatmapLabels.png" id="HeatmapLabelsImage" class="heatmap">
+              </div>
+            </div>
+          </div>
+
+
+
+
+          <!-- <figure class= "text-wrap-right">
             <img src="images/Heatmap300DPI_color.png" class="image">
             <figcaption>Figure 4: Heatmap of Character Activity. For this heatmap, the eight character race categories were sorted into four broader categories. The map shows where the four different types of characters appear across all the novels</figcaption>
-          </figure>
+          </figure> -->
 
           <p>
             This map shows all of the interactions in Faulkner's fiction. What is immediately noticeable with this map is that the racial distribution of areas is uneven. Faulkner does not equally distribute every type of character in every type of
@@ -309,9 +340,9 @@
             politics one way or another, but rather that he engaged in different subject matter throughout his career. His writing was not only varied in the kinds of people he wrote about, but was imaginatively connected to where those people were
             interacting with one another.
           </p>
-          <div style="text-align:center;">
-            <video controls="" name="media" width=75% align=center>
-              <source src="videos/Racial_Distribution_By_Publication_Date.mp4" type="video/mp4"></video>
+          <div class="video-frame">
+            <video controls="" name="media" width=75% poster="videos/Racial_Distribution_by_Publication_Date_poster.png">
+              <source src="videos/Racial_Distribution_By_Publication_Date_revised.mp4" type="video/mp4"></video>
           </div>
 
           <h4>Making a Choropleth</h4>
@@ -321,7 +352,8 @@
             both of these issues is to manually create administrative areas based on thematic connections, and then render the statistics for each area as a diagram. This is a visually cruder method, but gives greater insight into the areas, because
             all eight race types can be represented and it is easier to visually distinguish relative proportions. The drawback is that there is no way to animate this layer without causing a highly disjunctive experience for the viewer. The effect
             would be one where thirteen pie charts simultaneously change their relative proportions over time!
-            <img class="text-wrap-left" src="images/Yok Choropleth100DPI.jpg">
+            <img class="text-wrap-left" src="images/Choropleth300DPI.jpg">
+
           <p>
             The choropleth below bears out in more granular detail what the above heatmaps already showed somewhat more intuitively. The predominant group in Yoknapatawpha is white, and the more north Faulkner's imagination travels the higher the
             possibility of different types of characters increases. The more densely populated centers such as Jefferson and Frenchman's Bend appear to offer a check on any type of transgression of Jim Crow social codes and Laws. In similar fashion
@@ -381,6 +413,28 @@
         var checked = $(this).prop("checked");
         var container = $(this).parent();
         var siblings = container.siblings();
+        var checkClass = $(this).attr("class");
+        var currentID = $(this).attr("id")
+
+  console.log (checkClass)
+  console.log (currentID)
+
+        if (checked === false && checkClass === 'race-checkbox')
+        {
+          $('#' + currentID + 'Image').fadeTo(400, 0);
+        }
+        else if (checked === true && checkClass === 'race-checkbox')
+        {
+          $('#' + currentID + 'Image').fadeTo(400, 1);
+        }
+        // else if (checked === true && checkClass.includes('subOption') === true)
+        // {
+        //   $('#' + currentID + 'Image').fadeTo(400, 1);
+        // }
+        // else if (checked === false && checkClass.includes('subOption') === false)
+        // {
+        //   $('#' + currentID + 'Image').fadeTo(400, 0);
+        // }
 
         container.find('input[type="checkbox"]').prop({
           indeterminate: false,

@@ -1,3 +1,45 @@
+
+
+
+@media screen and ( max-width: 1024px )  {
+img.heatmap{
+  width:400px;
+}
+div.heatmap-frame{
+  width: 400px;
+}
+}
+
+@media ( max-width: 1200px )  {
+
+img.heatmap{
+  width:400px;
+}
+}
+
+@media screen and ( max-width: 640px )  {
+img.heatmap{
+  width:300px;
+}
+}
+@media ( max-width: 640px )  {
+img.heatmap{
+  width:300px;
+}
+}
+
+@media screen and ( max-width: 359px )  {
+img.heatmap{
+  width:200px;
+}
+}
+
+@media ( max-width: 360px )  {
+img.heatmap{
+  width:200px;
+}
+}
+
 .map-container {
   display: flex;
   justify-content: space-around;
@@ -7,27 +49,7 @@
   min-width: 470px;
   background-color: #F0F0F0;
   border-radius: 10px;
-  /* padding-right: : 0px;
-  padding-bottom: 40px;
-  padding-left: 40px;
-  padding-top: 40px; */
-}
 
-.controlpanel {
-  display: inline-block;
-  background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
-  padding: 20px;
-}
-
-.image-container {
-  display: block;
-  min-height: 500px;
-  width: 100%;
-  max-width: 450px;
-  /* border: 1px solid black; */
-  box-shadow: 2px 2px 4px grey;
 }
 
 .panel-row {
@@ -39,13 +61,108 @@
   padding-bottom: 30px;
 }
 
+.controlpanel {
+  display: inline-block;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 20px;
+
+}
+
+.instructions {
+  margin-bottom: 20px;
+}
+
+.image-container {
+  display: block;
+  min-height: 500px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 2px 2px 4px grey;
+}
+
+
+
 .overlay {
   position: absolute;
   max-width: 450px;
   width: 100%;
-
   opacity: .33;
 }
+
+.heatmap-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  justify-content: flex-start;
+    margin: auto;
+  max-width: 90%;
+  background-color: #F0F0F0;
+  border-radius: 10px;
+
+}
+
+
+
+
+.heatmap-row-small {
+  flex: 1 0 0;
+padding-left: 30px;
+    padding-top: 30px;
+  padding-bottom: 30px;
+}
+.heatmap-row-large {
+  flex: 2 0 0;
+  min-width: 650px;
+    padding: 30px;
+    margin-right: 30px;
+}
+
+.heatmap-frame {
+  height: 529px;
+  max-width: 100%;
+  max-height: 100%;
+  }
+
+.heatmap {
+  position: absolute;
+  max-width: 650px;
+  width: 100%;
+  max-height: 100%;
+  opacity: 1;
+    box-shadow: 2px 2px 4px grey;
+
+}
+
+.heatmap-glyph {
+  z-index: 99;
+
+  position: absolute;
+  width:33vw;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* #HeatmapAfricanAmerican input[type="checkbox"] {
+	display:none;
+}
+
+#HeatmapAfricanAmerican input + label {
+	display: inline-block;
+	width: 60px;
+	height: 30px;
+	cursor: pointer;
+	background-image: url(/images/AfricanAmericanLegendUnchecked.png);
+}
+
+#HeatmapAfricanAmerican input[type="checkbox"]:checked + label {
+	background-image: url(/images/AfricanAmericanLegendChecked.png)
+} */
+
+/* .race-glyph{
+  height:30px;
+} */
 
 .natural {
   opactiy: 0.33;
@@ -69,12 +186,61 @@
   display: inline-flex;
 }
 
+/* label {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left: 15px;
+  font-style: normal;
+  font-weight: 500;
+} */
+.race-checkbox{
+  display: none;
+}
+
 label {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-left: 15px;
   font-style: normal;
   font-weight: 500;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
+label::before {
+
+
+  transition-duration: 0.4s;
+  transform: scale(0);
+  opacity: 0.5;
+}
+
+
+.race-glyph {
+  height: 30px;
+  image-rendering:crisp-edges;
+  transition-duration: 0.2s;
+  transform-origin: 50% 50%;
+  opacity: .5;
+}
+
+:checked+label {
+    opacity: 1.0;
+}
+
+:checked+label::before {
+  opacity: 1.0;
+  }
+
+:checked+label img {
+  opacity: 1.0;
+}
+
 
 .subcategory {
   font-family: inherit;
@@ -83,9 +249,6 @@ label {
   font-size: 95%;
 }
 
-.instructions {
-  margin-bottom: 20px;
-}
 
 .image-title{
   font-size: 200%;
@@ -95,8 +258,7 @@ label {
 
 .video-frame{
   margin: 20px 0px 20px 0px;
-  
-    display: flex;
+      display: flex;
     justify-content: center;
 }
 .text-wrap-right {
@@ -104,10 +266,13 @@ label {
   float: right;
   margin-left: 10px;
   margin-bottom: 20px;
+  image-rendering: crisp-edges;
+
 }
 
 .text-wrap-left {
   width: 60%;
   float: left;
   margin: 10px;
+  image-rendering: crisp-edges;
 }
