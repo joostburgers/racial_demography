@@ -271,18 +271,18 @@
           </div>
           <div class="panel-row-right">
             <div class="image-container">
-              <img src="images/MosesNovel-natural.png" id="MosesNaturalImage" class="overlay natural">
-              <img src="images/MosesNovel-manmade-revised.png" id="MosesManmadeImage" class="overlay manmade">
-              <img src="images/Go_Down_Moses_Glyph.png" id="MosesGlyphImage" class="overlay-glyph">
+              <img src="images/MosesNovel-natural.png" id="MosesNaturalImage" class="image-layer natural">
+              <img src="images/MosesNovel-manmade-revised.png" id="MosesManmadeImage" class="image-layer manmade">
+              <img src="images/Go_Down_Moses_Glyph.png" id="MosesGlyphImage" class="image-layer-glyph">
 
 
-              <img src="images/OldPeople-manmade-revised.png" id="OldPeopleManmadeImage" class="overlay manmade">
-              <img src="images/OldPeople-natural-revised.png" id="OldPeopleNaturalImage" class="overlay natural">
-              <img src="images/Old_People_Glyph.png" id="OldPeopleGlyphImage" class="overlay-glyph">
+              <img src="images/OldPeople-manmade-revised.png" id="OldPeopleManmadeImage" class="image-layer manmade">
+              <img src="images/OldPeople-natural-revised.png" id="OldPeopleNaturalImage" class="image-layer natural">
+              <img src="images/Old_People_Glyph.png" id="OldPeopleGlyphImage" class="image-layer-glyph">
 
-              <img src="images/AJustice-natural.png" id="AJusticeNaturalImage" class="overlay natural">
-              <img src="images/AJustice-manmade.png" id="AJusticeManmadeImage" class="overlay manmade">
-              <img src="images/A_Justice_Glyph.png" id="AJusticeGlyphImage" class="overlay-glyph">
+              <img src="images/AJustice-natural.png" id="AJusticeNaturalImage" class="image-layer natural">
+              <img src="images/AJustice-manmade.png" id="AJusticeManmadeImage" class="image-layer manmade">
+              <img src="images/A_Justice_Glyph.png" id="AJusticeGlyphImage" class="image-layer-glyph">
 
             </div>
           </div>
@@ -521,7 +521,7 @@
 
           function checkSiblings(el) {
 
-            var parent = el.parent().parent(),
+          var parent = el.parent().parent(),
               all = true;
 
             el.siblings().each(function() {
