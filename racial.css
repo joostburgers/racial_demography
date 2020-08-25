@@ -112,8 +112,13 @@ figcaption{
 }
 .flex-box {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-flow: row wrap;
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .9) 20%,
+      rgba(255, 255, 255, .3)), url('images/background_texture.png');
+  border: 1px solid #D3D3D3;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .image {
@@ -127,9 +132,9 @@ figcaption{
 .image-row {
   text-align: left;
   flex: 1 0 0;
-  max-width: calc(33% - 10px);
-  margin: 5px;
-  min-width: 250px;
+  max-width: calc(33% - 0px);
+  margin: 0px;
+  min-width: 200px;
   list-style: none;
   list-style-type: none;
 }
