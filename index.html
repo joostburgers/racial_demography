@@ -147,7 +147,7 @@
         <h2 class="text_title">Introduction</h2>
         <p>The <em>Digital Yoknapatawpha</em> database represents a highly curated data set that, in abstract form, represents "all" of the locations, characters, and events in Faulkner's Yoknapatawpha fiction. This data can be mapped to gain insight
           into what types of characters are interacting and where. These interactions represent a kind of demographic map. This is not a traditional demography. There are, of course, no census records, voting rolls, or cadastral surveys of
-          Yoknapatawpha that demographers can use to paint a picture of the population. There are, however, a number of pieces of information that can act as proxies for understanding the relationship between characters and locations across the
+          Yoknapatawpha that demographers can use to paint a picture of the population. There are, however, a number of data points that can act as proxies for understanding the relationship between characters and locations across the
           corpus. The most intuitive way to display this information is through maps commonly used for population analysis: choropleths and population density "heatmaps." Needless to say, translating information about a fictional text into data that
           is intelligible to a Geographic Information System (GIS) is involved and imperfect. Nevertheless, the resulting maps are highly suggestive of the deep connections Faulkner made between people and places. The following interactive commentary
           documents how the <em>DY</em> data was used to create heatmaps and choropleths Yoknapatawpha's racial composition, how to read them, what they might mean, and their limitations. <sup><a href="#fn1">1</a></sup><a class="anchor-return"
@@ -162,70 +162,72 @@
           far more vexing philosophical question.
         </p>
         <strong>Character Data</strong>
-        <p>At its most basic level, demographic mapping relies on counting the absence and presence of particular kinds of people within a specific space, such as: births by country, road accident deaths by state, or votes cast by district. Creating
-          a demographic map of a fictional world is challenging precisely because characters are not people, and counting all "present" characters is not self-evident. In fiction, characters need not be present or even alive to play an important role
-          in the text. All of the characters in <em>Go Down, Moses</em> are haunted by the actions of Lucius Quintus Carothers McCaslin who died long before the beginning of the text. To allow for the different ways in which characters exist in Faulkner's world, the <em>DY</em> editors have some
-          flexibility in categorizing the role they play in an event or across the text more generally. For each event, characters are identified as either being "present" or "mentioned." In terms of their vitality, characters can be defined as
-          alive, dead, born, dies, and born-and-dies. They are also two special categories: dead-ghost and alive-ghost. These describe characters who are not physically present in the world of the text, but still <em>haunt</em> the characters. There
-          are compelling reasons to include mentioned characters, and other characters who may not have a direct physical presence in the text in the demography. Still, for the sake of understanding the broad contours of what types of characters
-          appear in different areas in Yoknapatawpha, all characters who were not physically present at an event were not included in the demographic overviews below. </p>
+        <p>At its most basic level, demographic mapping relies on counting the absence and presence of particular kinds of people within a specific space, such as: births by country, senior citizen road accident deaths by state, or female votes cast
+          by district. Creating
+          a demographic map of a fictional world is challenging precisely because characters are not people. Determining character presence, the number of characters, and character attributes can be remarkably difficult to pin down.</p>
+        <p>
+          In fiction, characters need not be present or even alive to play an important role
+          in the text. For example, all of the characters in <em>Go Down, Moses</em> are haunted by the actions of Lucius Quintus Carothers McCaslin who died long before the narrative present of the text. He is only "present" in 5 events, but he is
+          "mentioned" 51 times. Clearly, he is a very important character, and he could equally well be counted in a different type of demography. Yet,
+          for the sake of understanding the broad contours of what types of characters appear in different areas in Yoknapatawpha, all characters who were not physically present at an event were not included in the demographic overviews below. </p>
 
         <p>In a slightly different vein, not all characters in Yoknapatawpha are countable. There are quite a number of porch-sitters, crowds, angry mobs, town folk, and other non-countable collectives in Faulkner. Even though these groups
           represent different orders of magnitude, there is no way to make a quantitative distinction between them. To retain their multiplicity, all character collectives have been qualified as "groups," without attributing a numerical value to
           them. When doing a demographic analysis this becomes problematic. Either groups need to be included, and counted as one character, which undercounts the characters at "crowded" events, or groups need to be excluded entirely and only those
           events with fully individuated characters should be counted. Neither option is optimal, but for the purposes of the demographic maps below the latter option was chosen because it limits the number of unknowns, even if it excludes about
           20% of all events.
+        </p>
         <p>
           At the other end of the spectrum of grouped characters, are highly individuated characters who appear in multiple texts. Part of the connective tissue of Yoknapatawpha is that the same characters feature across the fiction. Sometimes they
-          are the protagonist, and at other times they play a peripheral role. In either case, they exist as unique characters who slip in and out of Faulkner's world. Part of the fascinating part of the saga is that characters appear and re-appear
+          are the main characters, and at other times they play a peripheral role. What is fascinating about Faulkner's saga is that characters appear and re-appear
           in new ways. For example, Elnora Strother is a character in three different texts, <em>Flags in the Dust</em>, "All the Dead Pilots," and "There Was a Queen." In "All the Dead Pilots," the text suggests she only has black ancestry, but in
           <em>Flags in the Dust</em> she is described as "mulatto" (9) without further commentary. In, "There Was a Queen" it is revealed that she is the illegitimate daughter of John Sartoris. When aggregating the characters by race this presents a
           problem. Do we count Elnora Strother as one person who only has one possible ancestry, and ignore the version from "All the Dead Pilots"? Or do we count these as three different Elnora Strothers who exist with unique attributes in each
-          text, and are linked through a common identifier across texts? Doing the former would essentially mean erasing Faulkner's "inconsistencies," while the latter feels intuitively like double counting. Both objections assume that there is a
+          text, and are linked through a common identifier across texts? Doing the former would essentially mean erasing Faulkner's "inconsistencies," while the latter feels intuitively like improper counting. Both objections assume that there is a
           "true" version of the character. This is not the case. Each version of Elnora should be treated as complete and unique to the fictional world of that particular text. Consequently, the demographic maps do not actually count characters, but
-          instead only counts their attributes. Hence, Elnora is counted twice as "Mixed Ancestry" and once as "black."
+          instead count the number of times particular character attributes are present at an event. In essence, characters become a collection of attributes.
         </p>
         <strong>Location Data</strong>
 
         <p>Another important consideration is the placement and consolidation of locations on an aggregate map. There are 68 individual maps in <em>DY</em>, each custom-made for a particular text. Some of the texts include locations that are either
           inside or outside of Yoknapatawpha, but feature a large number of events. To solve this problem, the team created custom insets. The benefit of this approach is that it provides a far more granular view into the world of Yoknapatawpha. The
           drawback is that map insets overlap when creating a consolidated map. Case in point, the short story "Ad Astra," and the novels, <em>Sanctuary</em> and <em>The Sound and the Fury</em>, all have insets in the northeast quadrant of the map,
-          but they signify places as far apart as the Western Front, Cambridge, Massachusetts, and Oxford, Mississippi.
+          but they signify places as far apart as the Western Front, Cambridge, Massachusetts, and Oxford, Mississippi. Figures 1-3 show the placement of these insets across the various maps.
         </p>
         <div class="flex-box">
           <div class="image-row">
             <figure>
               <a href="#img-Astra">
-          <img src="images/Ad_Astra.PNG" class="image"></a>
+                <img src="images/Ad_Astra.PNG" class="image"></a>
               <figcaption><em>Figure 1</em>: "Ad Astra"</figcaption>
             </figure>
           </div>
           <div class="image-row">
             <figure>
               <a href="#img-Sanctuary">
-              <img src="images/Sanctuary.PNG" class="image"></a>
+                <img src="images/Sanctuary.PNG" class="image"></a>
               <figcaption><em>Figure 2</em>: <em>Sanctuary</em></figcaption>
             </figure>
           </div>
           <div class="image-row">
             <figure>
               <a href="#img-SoundFury">
-              <img src="images/Sound_and_the_Fury.png" class="image"></a>
+                <img src="images/Sound_and_the_Fury.png" class="image"></a>
               <figcaption><em>Figure 3</em>: <em>The Sound and the Fury</em></figcaption>
             </figure>
           </div>
         </div>
-      <div>
-          </div>
+        <div>
+        </div>
         <a href="#_" class="overlay" id="img-Astra">
           <img src="images/Ad_Astra.PNG">
-      </a>
-      <a href="#_" class="overlay" id="img-Sanctuary">
-        <img src="images/Sanctuary.PNG">
-    </a>
-    <a href="#_" class="overlay" id="img-SoundFury">
-      <img src="images/Sound_and_the_Fury.png">
-  </a>
+        </a>
+        <a href="#_" class="overlay" id="img-Sanctuary">
+          <img src="images/Sanctuary.PNG">
+        </a>
+        <a href="#_" class="overlay" id="img-SoundFury">
+          <img src="images/Sound_and_the_Fury.png">
+        </a>
 
 
         <p>
@@ -240,7 +242,7 @@
           the total consolidated map. Likewise, the landscape and the man-made features of the map can also change.
         </p>
         <p>
-          The interactive display below was designed to demonstrate how landscape, infrastructure, and location all interact with one another within and across texts. The display allows users to toggle between the maps for different texts: "The Old
+          The interactive display below was designed to demonstrate how landscape, infrastructure, and location all interact with one another within and across texts. The display allows users to toggle between the maps of different texts: "The Old
           People," "A Justice," and <em>Go Down, Moses</em>. One thing that these texts share is that they all include the blacksmith shop where Sam Fathers works. This location is indicated by the different colored icons. The icons for "The Old
           People" and "A Justice" are close together, and at some remove from the blacksmith on the McCaslin plantation. Superficially, it would appear the blacksmiths for "The Old People" and "A Justice" are more similar to each other than that of
           <em>Go Down, Moses</em>. A careful comparison of the landscape and infrastructure surrounding all three locations reveals that conceptually the blacksmith in "The Old People" and <em>Go Down, Moses</em> share some important similarities
@@ -251,37 +253,44 @@
 
         <div class="map-container">
           <div class="panel-row-left">
-            <div class="animation-title"> Interactivity: Map Feature Comparison </div>
+            <div class="animation-title">Interactivity: Map Feature Comparison</div>
             <div class="instructions">Check and uncheck the boxes to select different layers.</div>
             <div class="controlpanel">
-              <ul>
-                <li>
-
+              <ul class="option-box">
+                <ul>
+                  <li>
                   <label for="option"><input type="checkbox" id="1" value="check" class="option" checked><em> Go Down, Moses</em></label>
+                </li>
                   <ul>
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="MosesManmade" checked> Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="MosesNatural" checked> Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="MosesGlyph" checked><img src="images/Go_Down_Moses_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
                   </ul>
-                </li>
+                </ul>
+              </ul>
+                <ul class="option-box">
+                <ul>
                 <li>
-
-                  <label for="option">  <input type="checkbox" id="2" value="check" class="option" checked> "The Old People"</label>
+                  <label for="option"> <input type="checkbox" id="2" value="check" class="option" checked> "The Old People"</label>
+                </li>
                   <ul>
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="OldPeopleManmade" checked> Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="OldPeopleNatural" checked> Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="OldPeopleGlyph" checked><img src="images/Old_People_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
                   </ul>
-                </li>
+                </ul>
+              </ul>
+                <ul class="option-box">
+                <ul>
                 <li>
-
                   <label for="option"> <input type="checkbox" id="3" value="check" class="option" checked> "A Justice"</label>
+                </li>
                   <ul>
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="AJusticeManmade" checked> Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="AJusticeNatural" checked> Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="AJusticeGlyph" checked> <img src="images/A_Justice_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
                   </ul>
-                </li>
+                </ul>
               </ul>
             </div>
           </div>
@@ -321,7 +330,7 @@
         <p>In demographic mapping, there are two common types of maps: choropleths and heatmaps. Choropleths aggregate the features within a predefined area such as a country, state, or county. Heatmaps show the frequency of a feature across an area.
           Both types of maps tell different stories. In choropleths, the data is shaped by the area. They are good at demonstrating differences between areas, such as state voting results. In heatmaps, the area is generated by the data, and
           highlights differences across space, such as the rate of infection of a disease. The possibility of creating either map is in some measure dependent on the level of data available. The <em>DY</em> data, which captures where characters are
-          interacting and when, is well-suited to heatmaps. With some modification and recoding, the data can also be represented in a choropleth.
+          interacting and when, is well-suited to heatmaps. With some modification and recoding, the data can also be represented as a choropleth.
         </p>
 
         <strong>Heatmaps</strong>
@@ -335,7 +344,7 @@
           As racial interaction and conflict are two of the most predominant features of Faulkner's fiction. These heatmaps focus on the racial distribution of Faulkner's world, though class, gender, family, and vitality are all different ways to
           think of demography in <em>DY</em>. In the database there are eight distinct racial attributes a character can have. Mapping all of these on a heatmap with different colors would be visually overwhelming, and therefore all characters who
           were not coded as "white," "black," or "Indian" were recoded as having "mixed ancestry." This also includes characters whose race is indeterminable, such as Joe Christmas. These four layers were then overlaid with each other to show
-          possible interactions between characters in space. The interactive map below allows users to add and subtract layers to see how the different groups interact with one another.
+          possible interactions between characters in space. The interactive map below allows users to add and subtract layers to see where the different groups interact with one another.
         </p>
 
 
@@ -368,19 +377,21 @@
 
         <p>
           What is immediately noticeable on the map is that the different places in Yoknapatawpha have a different racial composition. Directly north of the town are the lands ruled by Ikkemotubbe throughout different texts in the saga, and,
-          accordingly, they are the site of the most Native Americans activity. Meanwhile, the areas to the northwest and the northeast of town have more characters of mixed ancestry. These two corners of the map are the site of two novels that deal
+          accordingly, they are the site of the most Native American activity. Meanwhile, the areas to the northwest and the northeast of town have more characters of mixed ancestry. These two corners of the map are the site of two novels that deal
           extensively with race: <em>Absalom, Absalom!</em> and <em>Go Down, Moses</em>. It is tempting to suggest that part of the reason why more mixed ancestry characters appear here is because the Sutpen and McCaslin plantations are more isolated
-          from town, and the sexual exploitation that led to mixed ancestry children was less likely to be met with the opprobrium of the town. Another reason why there the character types are comparatively more diverse in the northwest is because of
+          from town, and the sexual exploitation that led to mixed ancestry children was less likely to be met with public opprobrium. Another reason why the character types are comparatively more diverse in the northwest is because of
           the hunting grounds of the Big Bottom, Sutpen's former plantation. This is where men from different backgrounds come together to engage in the ritual of the hunt in <em>Go Down, Moses</em>.
         </p>
         <p>
           At the locations closer to town, there are relatively fewer characters outside of the white and black binary. The Sartoris and Compson places both maintain strictly segregated households with very few mixed ancestry characters appearing at
-          these locations. The exception is the aforementioned Elenora Strother, who, it is later revealed, is the daughter of John Sartoris and an unnamed black woman. Likewise, the town of Jefferson may see some interaction between white and
+          these locations. The exception is the aforementioned Elnora Strother, who, it is later revealed, is the daughter of John Sartoris and an unnamed black woman. Likewise, the town of Jefferson may see some interaction between white and
           non-white characters, but the majority of the people who appear here are white. This trend is even more pronounced in Frenchman's Bend, where the majority of the population is white.
         </p>
+        <strong>Animated Heatmaps</strong>
         <p>
-          While the above map provides a reasonable overview, it is also distorting because it flattens out time. <em>DY</em> captures time in Faulkner in multiple ways, the most salient of which are narrative time and publication date. The events
-          stretch from the birth of Jesus to 1980 in narrative time, simultaneously the data also represents thirty years of writing. The animation of either variable will result in the same map as above, but the way it arrives there is different.
+          While the above map provides a reasonable overview, it is also distorting because it flattens out time. <em>DY</em> captures time in Faulkner in multiple ways, the most salient of which are narrative time and publication date. The events in
+          the fiction stretch from the birth of Jesus to 1980 in narrative time, simultaneously the data also represents thirty years of writing. The animation of either variable will result in the same map as above, but the way it arrives there is
+          different.
           The chronology animation was created by sequencing all events by date order from 1776 to 1961. The resulting animation is additive. With each new data point that appears the heatmaps for each race will continue to grow. As all the events in
           each text are sequenced according to narrative time, it disregards when the text was written. By collapsing the publication date, it is possible to see how Faulkner consistently mapped different kinds of characters in different types of
           places, and how the action in these places is bound by narrative time.
@@ -409,7 +420,7 @@
           text in relation to the spaces Faulkner has already described in previous texts.
         </p>
         <div class="video-highlight">
-          <div class="animation-title">Animation: Chronological Heatmap by Race</div>
+          <div class="animation-title">Animation: Publication Heatmap by Race</div>
           <div class="video-frame-left">
             <video controls="" name="media" width=100% poster="videos/Racial_Distribution_by_Publication_Date_poster.png">
               <source src="videos/Racial_Distribution_By_Publication_Date_revised.mp4" type="video/mp4"></video>
@@ -420,11 +431,11 @@
             The publication map tells a similar story to the chronological heatmap. Here, it is not so much chronological time in the narrative that corresponds to an increase of mixed ancestry characters, but publication date. The map gets notably
             more populated with mixed ancestry characters later in Faulkner's career. This is particularly true of texts like <em>Absalom, Absalom!</em>, <em>Go Down, Moses</em>, and <em>The Reivers</em>. On the whole though, there are a non-trivial
             number of texts that feature white characters almost exclusively. The Snopes trilogy especially stands out, and there are very few non-white characters who are present at the events in Frenchman's Bend. Nevertheless, the stark contrast
-            between the racial maps of texts like <em>Go Down, Moses</em> and The Snopes trilogy should not be seen as an easy short-hand to understanding race in these novels. Instead, they are suggestive of how of Faulkner imaginatively connection
+            between the racial maps of texts like <em>Go Down, Moses</em> and The Snopes trilogy should not be seen as an easy short-hand to understanding race in these novels. Instead, they are suggestive of how of Faulkner imaginatively connected
             different types of people with different types of places. </p>
         </div>
         <p>
-          Heatmaps are a useful tool for understanding relative density difference across areas of the map. The problem is that it is very hard to determine the differences in the orders of magnitude. It is clear that Jefferson has more activity, but
+          Heatmaps are a useful tool for understanding the relative density difference across areas of the map. The problem is that it is very hard to determine the orders of magnitude. It is clear that Jefferson has more activity, but
           there is no way to quantify this activity other than the darker shades of the respective colors. One way to quantify differences between areas of a map is through a choropleth.
         </p>
 
@@ -466,7 +477,7 @@
         </p>
         <p>They also provide a larger insight into the world of the Jim Crow South. The legal apartheid regime that was in place in the South before the Civil Rights movement was uniformly dehumanizing to non-whites, but - based on Faulkner's telling
           - this dehumanization was not uniformly experienced. Race also had a spatial component. Under the watchful gaze of the Jefferson community, racial boundaries were strictly maintained. Moving farther away from population centers, the strict
-          color line becomes blurrier, and while it would be a mischaracterization to conceive of this as transgressive, it, in any event, highlights how the stark divisions between black and white are far more constructed. In this sense,
+          color line becomes blurrier. While it would be a mischaracterization to conceive of this as transgressive, it does highlight how the stark divisions between black and white are socially constructed. In this sense,
           Yoknapatawpha's uneven demography hints at a possible future demographic mosaic that is always yet to come, even if Faulkner himself might have been unclear on how to get there.
         </p>
 
@@ -474,9 +485,9 @@
         <h2 class="text_title">Further Reading</h2>
         <p>These maps are most powerful when they are deployed with other research methodologies and brought to bear on a specific research question. The recently published paper, <a
             href="https://culturalanalytics.org/article/14112-familial-places-in-jim-crow-spaces-kinship-demography-and-the-color-line-in-william-faulkner-s-yoknapatawpha-county"><em>Familial Places in Jim Crow Spaces: Kinship, Demography, and the
-              Color Line in William Faulkner's Yoknapatawpha County</em></a> does exactly that and explores how family was a key means through which characters in Faulkner's world navigated the color line.</p>
+              Color Line in William Faulkner's Yoknapatawpha County</em></a> explores the relationship between kinship, race, and space in Faulkner using different computational approaches including mapping.</p>
 
-        <h3>Citing This Source</h3>
+        <h2 class="text_title">Citing This Source</h2>
         <div class="anchor" id="citing"></div>
         <div class="row">
           <p class="citation">Burgers, Johannes. "Visualizing Racial Demography in Yoknapatawpha." Added to Project: 2020. <i>Digital Yoknapatawpha</i>. University of Virginia. http://faulkner.iath.virginia.edu/the_art_of_faulkner_technique.html
@@ -489,105 +500,105 @@
             these maps is available <a href="http://faulkner.iath.virginia.edu/media/resources/DISPLAYS/FaulknerMapsHP.html">here</a>.
             <a href="#ref1" title="Jump back to footnote 1 in the text.">&#8617;</a></span><br>
         </div>
-</div>
-</div>
-
-      <div id="page_footer">
-        <div id= "footer_date">Last Update: 10-24-2020</div>
-        <div id="footer_iath_link"><a href="https://www.iath.virginia.edu/">IATH</a></div>
       </div>
     </div>
 
+    <div id="page_footer">
+      <div id="footer_date">Last Update: 10-24-2020</div>
+      <div id="footer_iath_link"><a href="https://www.iath.virginia.edu/">IATH</a></div>
+    </div>
+  </div>
 
 
 
-    <script>
-      $(document).ready(function() {
 
-        $('.nav-link').click(function(e) {
+  <script>
+    $(document).ready(function() {
 
-          $(".navbar-collapse").removeClass('in');
-          $(".navbar-collapse").addClass('collapse');
+      $('.nav-link').click(function(e) {
+
+        $(".navbar-collapse").removeClass('in');
+        $(".navbar-collapse").addClass('collapse');
+      });
+
+
+
+      $('input[type="checkbox"]').change(function(e) {
+
+        var checked = $(this).prop("checked");
+        var container = $(this).parent();
+        var siblings = container.siblings();
+        var checkClass = $(this).attr("class");
+        var currentID = $(this).attr("id")
+
+        console.log(checkClass)
+        console.log(currentID)
+
+        if (checked === false && checkClass === 'race-checkbox') {
+          $('#' + currentID + 'Image').fadeTo(400, 0);
+        } else if (checked === true && checkClass === 'race-checkbox') {
+          $('#' + currentID + 'Image').fadeTo(400, 1);
+        }
+
+
+        container.find('input[type="checkbox"]').prop({
+          indeterminate: false,
+          checked: checked
         });
 
-
-
-        $('input[type="checkbox"]').change(function(e) {
-
-          var checked = $(this).prop("checked");
-          var container = $(this).parent();
-          var siblings = container.siblings();
-          var checkClass = $(this).attr("class");
-          var currentID = $(this).attr("id")
-
-          console.log(checkClass)
-          console.log(currentID)
-
-          if (checked === false && checkClass === 'race-checkbox') {
-            $('#' + currentID + 'Image').fadeTo(400, 0);
-          } else if (checked === true && checkClass === 'race-checkbox') {
-            $('#' + currentID + 'Image').fadeTo(400, 1);
-          }
-
-
-          container.find('input[type="checkbox"]').prop({
-            indeterminate: false,
-            checked: checked
-          });
-
-          function checkSiblings(el) {
+        function checkSiblings(el) {
 
           var parent = el.parent().parent(),
-              all = true;
+            all = true;
 
-            el.siblings().each(function() {
-              let returnValue = all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
-              return returnValue;
+          el.siblings().each(function() {
+            let returnValue = all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
+            return returnValue;
+          });
+
+          if (all && checked) {
+
+            parent.children('input[type="checkbox"]').prop({
+              indeterminate: false,
+              checked: checked
             });
 
-            if (all && checked) {
+            checkSiblings(parent);
 
-              parent.children('input[type="checkbox"]').prop({
-                indeterminate: false,
-                checked: checked
-              });
+          } else if (all && !checked) {
 
-              checkSiblings(parent);
+            parent.children('input[type="checkbox"]').prop('checked', checked);
+            parent.children('input[type="checkbox"]').prop('indeterminate', (parent.find('input[type="checkbox"]:checked').length > 0));
+            checkSiblings(parent);
 
-            } else if (all && !checked) {
+          } else {
 
-              parent.children('input[type="checkbox"]').prop('checked', checked);
-              parent.children('input[type="checkbox"]').prop('indeterminate', (parent.find('input[type="checkbox"]:checked').length > 0));
-              checkSiblings(parent);
-
-            } else {
-
-              el.parents('li').children('input[type="checkbox"]').prop({
-                indeterminate: true,
-                checked: false,
-              });
-            }
+            el.parents('li').children('input[type="checkbox"]').prop({
+              indeterminate: true,
+              checked: false,
+            });
           }
+        }
 
-          checkSiblings(container);
+        checkSiblings(container);
 
-          var naturalChecked = $('input:checkbox.naturalcheck:checked').length;
-          var manmadeChecked = $('input:checkbox.manmadecheck:checked').length;
-          $('.natural').fadeTo('slow', 1 / naturalChecked);
-          $('.manmade').fadeTo('slow', 1 / manmadeChecked);
-          var currentlyChecked = $('.subOption');
-          var index;
+        var naturalChecked = $('input:checkbox.naturalcheck:checked').length;
+        var manmadeChecked = $('input:checkbox.manmadecheck:checked').length;
+        $('.natural').fadeTo('slow', 1 / naturalChecked);
+        $('.manmade').fadeTo('slow', 1 / manmadeChecked);
+        var currentlyChecked = $('.subOption');
+        var index;
 
-          for (index = 0; index < currentlyChecked.length; ++index) {
-            imageID = currentlyChecked[index].id;
-            if (currentlyChecked[index].checked === true) {
-              $('#' + imageID + 'Image').show();
-            } else {
-              $('#' + imageID + 'Image').hide();
-            }
+        for (index = 0; index < currentlyChecked.length; ++index) {
+          imageID = currentlyChecked[index].id;
+          if (currentlyChecked[index].checked === true) {
+            $('#' + imageID + 'Image').show();
+          } else {
+            $('#' + imageID + 'Image').hide();
           }
-        });
+        }
       });
-    </script>
+    });
+  </script>
 
 </body>
