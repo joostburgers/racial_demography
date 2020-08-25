@@ -144,8 +144,8 @@ figcaption{
   max-width: 100%;
   background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .9) 20%,
       rgba(255, 255, 255, .3)), url('images/background_texture.png');
-  border: 1px solid black;
-  border-radius: 15px;
+  border: 1px solid #D3D3D3;
+  border-radius: 5px;
 }
 
 .panel-row-left {
@@ -344,8 +344,8 @@ label::before {
   margin-top: 40px;
   margin-bottom: 40px;
   padding: 30px;
-  border: 1px solid black;
-  border-radius: 15px;
+  border: 1px solid #D3D3D3;
+  border-radius: 5px;
 }
 
 .animation-title {
