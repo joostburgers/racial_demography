@@ -256,42 +256,45 @@
             <div class="animation-title">Interactivity: Map Feature Comparison</div>
             <div class="instructions">Check and uncheck the boxes to select different layers.</div>
             <div class="controlpanel">
-              <ul class="option-box">
+              <div class="option-box">
                 <ul>
                   <li>
-                  <label for="option"><input type="checkbox" id="1" value="check" class="option" checked><em> Go Down, Moses</em></label>
-                </li>
-                  <ul>
+                  <input type="checkbox" id="1" value="check" class="option" checked><em> Go Down, Moses</em>
+                      <ul>
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="MosesManmade" checked> Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="MosesNatural" checked> Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="MosesGlyph" checked><img src="images/Go_Down_Moses_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
                   </ul>
+                </li>
                 </ul>
-              </ul>
-                <ul class="option-box">
+                </div>
+
+                <div class="option-box">
                 <ul>
                 <li>
-                  <label for="option"> <input type="checkbox" id="2" value="check" class="option" checked> "The Old People"</label>
-                </li>
+                   <input type="checkbox" id="2" value="check" class="option" checked> "The Old People"
                   <ul>
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="OldPeopleManmade" checked> Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="OldPeopleNatural" checked> Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="OldPeopleGlyph" checked><img src="images/Old_People_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
                   </ul>
-                </ul>
+                </li>
               </ul>
-                <ul class="option-box">
+              </div>
+                <div class="option-box">
                 <ul>
                 <li>
-                  <label for="option"> <input type="checkbox" id="3" value="check" class="option" checked> "A Justice"</label>
-                </li>
+                <input type="checkbox" id="3" value="check" class="option" checked> "A Justice"
                   <ul>
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="AJusticeManmade" checked> Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="AJusticeNatural" checked> Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="AJusticeGlyph" checked> <img src="images/A_Justice_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
                   </ul>
-                </ul>
+
+                </li>
+
               </ul>
+              </div>
             </div>
           </div>
           <div class="panel-row-right">
@@ -519,12 +522,12 @@
 
 
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
 
       $('.nav-link').click(function(e) {
 
-        $(".navbar-collapse").removeClass('in');
-        $(".navbar-collapse").addClass('collapse');
+        $('.navbar-collapse').removeClass('in');
+        $('.navbar-collapse').addClass('collapse');
       });
 
 
@@ -536,9 +539,7 @@
         var siblings = container.siblings();
         var checkClass = $(this).attr("class");
         var currentID = $(this).attr("id")
-
-        console.log(checkClass)
-        console.log(currentID)
+        console.log(container)
 
         if (checked === false && checkClass === 'race-checkbox') {
           $('#' + currentID + 'Image').fadeTo(400, 0);
@@ -556,7 +557,8 @@
 
           var parent = el.parent().parent(),
             all = true;
-
+          console.log(parent)
+          console.log(parent)
           el.siblings().each(function() {
             let returnValue = all = ($(this).children('input[type="checkbox"]').prop("checked") === checked);
             return returnValue;
@@ -578,7 +580,7 @@
             checkSiblings(parent);
 
           } else {
-
+          console.log (el.parents('li').children)
             el.parents('li').children('input[type="checkbox"]').prop({
               indeterminate: true,
               checked: false,

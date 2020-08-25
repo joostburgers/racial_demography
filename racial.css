@@ -288,7 +288,7 @@ padding-left: 30px;
 
 label {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-left: 15px;
+  margin-left: 0px;
   font-style: normal;
   font-weight: 500;
   display: block;
@@ -301,6 +301,11 @@ label {
   -ms-user-select: none;
   user-select: none;
 }
+
+.subcategory{
+  margin-left: 5px;
+}
+
 
 label::before {
   transition-duration: 0.4s;
