@@ -109,7 +109,10 @@ flex-basis:66.66%;
 
 figcaption{
   margin: 10px 0 0 10px;
+
 }
+
+
 .flex-box {
   display: flex;
   justify-content: center;
@@ -121,14 +124,6 @@ figcaption{
   padding: 10px;
 }
 
-.image {
-  width: 95%;
-  max-width: 1140px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
 .image-row {
   text-align: left;
   flex: 1 0 0;
@@ -138,6 +133,16 @@ figcaption{
   list-style: none;
   list-style-type: none;
 }
+
+.image {
+  width: 95%;
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
 
 .map-container {
   display: flex;
@@ -182,8 +187,8 @@ figcaption{
   padding: 10px;
 }
 
-.option-box{
-  margin:0;
+.option-box input{
+  margin: 3px 5px 3px 0;
 }
 
 
@@ -207,34 +212,7 @@ figcaption{
   opacity: .33;
 }
 
-/* .heatmap-container {
-  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, .9) 20%,
-      rgba(255, 255, 255, .3)), url('images/background_texture.png');
-  border: 1px solid black;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin: auto;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  max-width: 90%;
-  } */
 
-/*
-.heatmap-row-small {
-  flex: 1 0 0;
-padding-left: 30px;
-    padding-top: 30px;
-  padding-bottom: 30px;
-}
-.heatmap-row-large {
-  flex: 2 0 0;
-  min-width: 650px;
-    padding: 30px;
-    margin-right: 30px;
-} */
 .heatmap-frame {
   height: 366px;
     max-height: 100%;
@@ -302,15 +280,19 @@ label {
   user-select: none;
 }
 
-.subcategory{
-  margin-left: 5px;
-}
+
 
 
 label::before {
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
   transform: scale(0);
   opacity: 0.5;
+}
+
+label:hover {
+opacity:.8;
+  /* color: rgba(0, 0, 0, .9);
+   box-shadow: 1px 1px 2px rgba(0, 0, 0, .3); */
 }
 
 .race-glyph {
@@ -318,7 +300,7 @@ label::before {
   image-rendering: crisp-edges;
   transition-duration: 0.2s;
   transform-origin: 50% 50%;
-  opacity: .5;
+  opacity: .4;
 }
 
 :checked+label {
@@ -326,12 +308,23 @@ label::before {
 }
 
 :checked+label::before {
-  opacity: 1.0;
+  opacity: .3;
 }
 
 :checked+label img {
   opacity: 1.0;
 }
+
+label img:hover{
+  opacity: .8;
+  transition-duration: 0;
+}
+
+label img not(:checked):hover{
+  opacity: .3;
+  transition-duration: 0;
+}
+
 
 .subcategory {
   font-family: inherit;
@@ -405,7 +398,7 @@ label::before {
   padding: 10px 10px 10px 10px;
 }
 .overlay {
-  /* Display over the entire page */
+
   position: fixed;
   z-index: 99;
   top: 0;
@@ -414,7 +407,7 @@ label::before {
   height: 100%;
   background: rgba(0,0,0,0.7);
 
-  /* Horizontal and vertical centering of the image */
+
   display: flex;
   align-items: center;
   text-align: center;
@@ -424,12 +417,12 @@ label::before {
 }
 
 .overlay img{
-  /* Maximum image size */
+
   max-width: 90%;
   max-height: 90%;
   margin-left: auto;
   margin-right:auto;
-  /* We keep the ratio of the image */
+
   width: auto;
   height: auto;
 }
