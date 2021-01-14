@@ -155,7 +155,7 @@
           Yoknapatawpha that demographers can use to paint a picture of the population. There are, however, a number of data points that can act as proxies for understanding the relationship between characters and locations across the
           corpus. The most intuitive way to display this information is through maps commonly used for population analysis: choropleths and population density "heatmaps." Needless to say, translating information about a fictional text into data that
           is intelligible to a Geographic Information System (GIS) is involved and imperfect. Nevertheless, the resulting maps are highly suggestive of the deep connections Faulkner made between people and places. The following interactive commentary
-          documents how the <em>DY</em> data was used to create heatmaps and choropleths Yoknapatawpha's racial composition, how to read them, what they might mean, and their limitations. <sup><a href="#fn1">1</a></sup><a class="anchor-return"
+          documents how the <em>DY</em> data was used to create heatmaps and choropleths of Yoknapatawpha's racial composition, how to read them, what they might mean, and their limitations. <sup><a href="#fn1">1</a></sup><a class="anchor-return"
             id="ref1"></a>
         </p>
 
@@ -188,7 +188,7 @@
           in new ways. For example, Elnora Strother is a character in three different texts, <em>Flags in the Dust</em>, "All the Dead Pilots," and "There Was a Queen." In "All the Dead Pilots," the text suggests she only has black ancestry, but in
           <em>Flags in the Dust</em> she is described as "mulatto" (9) without further commentary. In "There Was a Queen," it is revealed that she is the illegitimate daughter of John Sartoris. When aggregating the characters by race this presents a
           problem. Do we count Elnora Strother as one person who only has one possible ancestry, and ignore the version from "All the Dead Pilots"? Or do we count these as three different Elnora Strothers who exist with unique attributes in each
-          text, and are linked through a common identifier across texts? Doing the former would essentially mean erasing Faulkner's "inconsistencies," while the latter feels intuitively like improper counting. Both objections assume that there is a
+          text? Doing the former would essentially mean erasing Faulkner's "inconsistencies," while the latter feels intuitively like improper counting. Both objections assume that there is a
           "true" version of the character. This is not the case. Each version of Elnora should be treated as complete and unique to the fictional world of that particular text. Consequently, the demographic maps do not actually count characters, but
           instead count the number of times particular character attributes are present at an event. In essence, characters become a collection of attributes.
         </p>
@@ -259,13 +259,13 @@
         <div class="map-container">
           <div class="panel-row-left">
             <div class="animation-title">Interactivity: Map Feature Comparison</div>
-            <div class="instructions">Check and uncheck the boxes to select different layers.</div>
+            <div class="instructions">Check and uncheck the boxes to select different layers. Click the arrows (&#x25B6;) to expand the layer list.</div>
             <div class="controlpanel">
               <div class="option-box">
-                <ul>
-                  <li>
-                  <label><input type="checkbox" value="check" class="option" id="1" checked><em>Go Down, Moses</em></label>
-                      <ul>
+                <ul id = "selection_tree">
+                  <li><span class = "arrow"></span>
+                  <label class = "tree-label"><input type="checkbox" value="check" class="option" id="1" checked><em>Go Down, Moses</em></label>
+                      <ul class = "nested">
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="MosesManmade" checked> Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="MosesNatural" checked> Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="MosesGlyph" checked><img src="images/Go_Down_Moses_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
@@ -276,9 +276,9 @@
 
                 <div class="option-box">
                 <ul>
-                <li>
-                   <label><input type="checkbox" id="2" value="check" class="option" checked>"The Old People"</label>
-                  <ul>
+                <li><span class = "arrow"></span>
+                   <label class= "tree-label"><input type="checkbox" id="2" value="check" class="option" checked>"The Old People"</label>
+                  <ul class = "nested">
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="OldPeopleManmade" checked>Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="OldPeopleNatural" checked>Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="OldPeopleGlyph" checked><img src="images/Old_People_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
@@ -288,9 +288,9 @@
               </div>
                 <div class="option-box">
                 <ul>
-                <li>
-                <label><input type="checkbox" id="3" value="check" class="option" checked>"A Justice"</label>
-                  <ul>
+                <li><span class = "arrow"></span>
+                <label class="tree-label"><input type="checkbox" id="3" value="check" class="option" checked>"A Justice"</label>
+                  <ul class = "nested">
                     <li class=subcategory><label><input type="checkbox" class="subOption manmadecheck" id="AJusticeManmade" checked>Man made features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption naturalcheck" id="AJusticeNatural" checked>Natural features</label></li>
                     <li class=subcategory><label><input type="checkbox" class="subOption" id="AJusticeGlyph" checked> <img src="images/A_Justice_Glyph_menu.png" class="menu-glyph">Sam Fathers shop</label></li>
@@ -319,6 +319,7 @@
 
             </div>
           </div>
+          <div class = "map-container-caption">The above map overlays shows how locations can shift from story to story. Beyond changes in their position, Faulkner is also very nuanced about changing the context of each place. In "A Justice" the blacksmith shop is relatively isolated and adjacent to the only road to town. Meanwhile, in <em>Go Down, Moses</em> the shop is one location connected through others via a network of roads.</div>
         </div>
 
         <p>
@@ -379,7 +380,8 @@
               <img src="images/HeatmapNativeAmerican.png" id="HeatmapNativeAmericanImage" class="heatmap">
               <img src="images/HeatmapLabels.png" id="HeatmapLabelsImage" class="heatmap">
             </div>
-          </div>
+            </div>
+            <div class = "map-container-caption"> The above map shows the racial distribution of the four major categories in the fiction. What is noticeable is the cluster of white characters in Frenchman's Bend, and the more diverse cast of characters that make an appearance in the northeast and northwest of the map.</div>
         </div>
 
 
@@ -544,6 +546,16 @@ $('.race-legend input[type="checkbox"]').change(function(e) {
   }
 
 });
+
+var toggler = document.getElementsByClassName("arrow");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+  toggler[i].addEventListener("click", function() {
+    this.parentElement.querySelector(".nested").classList.toggle("active");
+    this.classList.toggle("arrow-down");
+  });
+}
 
   $('.option-box input[type="checkbox"]').change(function(e) {
         var checked = $(this).prop("checked");
