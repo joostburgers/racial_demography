@@ -112,6 +112,23 @@ figcaption{
 
 }
 
+.essay-header {
+
+  position: relative;
+  }
+
+.essay-title{
+  position: absolute;
+  bottom:25%;
+  left:16px;
+}
+
+.header-image{
+  width:100%;
+  height: auto;
+  opacity: 0.4;
+  filter:grayscale(50%);
+  }
 
 .flex-box {
   display: flex;
