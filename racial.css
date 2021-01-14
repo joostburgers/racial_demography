@@ -222,21 +222,21 @@ ul, #selection_tree {
   list-style-type: none;
 }
 
-.footnotes{
+.footnotes {
   line-height: 1.2em;
   font-size: 90%;
 }
 
-.note{
+.note {
   display: block;
 }
 
-.anchor-return{
-  position:absolute;
+.anchor-return {
+  position: absolute;
   margin-top: -20px;
 }
 
- .exceptions-list {
+.exceptions-list {
   list-style-type: disc;
   line-height: 1.5em;
   margin: 15px 80px 25px 40px;
@@ -492,6 +492,10 @@ label img not(:checked):hover {
   padding: 10px 10px 10px 10px;
 }
 
+
+/* Overlay mechanics and styling */
+
+
 .overlay {
   position: fixed;
   z-index: 99;
@@ -503,7 +507,6 @@ label img not(:checked):hover {
   display: flex;
   align-items: center;
   text-align: center;
-  /* We hide all this by default */
   visibility: hidden;
 }
 
@@ -521,16 +524,13 @@ label img not(:checked):hover {
   outline: none;
   cursor: default;
   transition-duration: 0.2s;
-
 }
 
-
- .closebtn {
-   font-family: sans-serif;
-background-color: rgb(255, 0, 0);
-color:white;
-
-   font-weight: bold;
+.closebtn {
+  font-family: sans-serif;
+  background-color: rgb(255, 0, 0);
+  color: white;
+  font-weight: bold;
   position: absolute;
   top: 20px;
   right: 20px;
@@ -538,17 +538,9 @@ color:white;
   padding: 5px;
   border: 2px solid #eef5df;
   border-radius: 5px;
-  opacity:.3;
+  opacity: .3;
 }
 
 .closebtn:hover {
-
- opacity:.5;
-}
-
-.closebtn::before{
-  transition-duration: 0.2s;
-  transform: scale(0);
-  opacity: 0.5;
-
+  opacity: .5;
 }
