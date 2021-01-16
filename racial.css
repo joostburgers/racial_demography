@@ -150,6 +150,10 @@ figcaption {
   min-width: 200px;
   list-style: none;
   list-style-type: none;
+  }
+.image-row:hover{
+  box-shadow: 2px 2px 4px grey;
+
 }
 
 .image {
@@ -262,6 +266,7 @@ ul, #selection_tree {
   color: black;
   display: inline-block;
   margin-right: 6px;
+  margin-left: 6px;
 }
 
 /* Rotate the caret/arrow icon when clicked on (using JavaScript) */
@@ -473,7 +478,11 @@ label img not(:checked):hover {
   float: right;
   margin-left: 10px;
   margin-bottom: 20px;
+  padding:5px;
   image-rendering: optimizeQuality;
+}
+.text-wrap-right:hover{
+    box-shadow: 2px 2px 4px grey;
 }
 
 .text-wrap-left {
