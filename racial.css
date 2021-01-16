@@ -149,6 +149,7 @@ figcaption {
   margin: 0px;
   min-width: 200px;
   padding:2px;
+  border-radius: 5px;
   list-style: none;
   list-style-type: none;
   }
@@ -554,3 +555,15 @@ label img not(:checked):hover {
 .closebtn:hover {
   opacity: .5;
 }
+
+.citation{
+  margin: 10px 0 20px 30px;
+  text-indent: -30px;
+  padding-left: 30px;
+  line-height: 1.5em;
+  display:inline-block;
+
+}
+ /* .citation::first-line{
+  text-indent:0px;
+} */
