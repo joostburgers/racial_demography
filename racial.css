@@ -148,6 +148,7 @@ figcaption {
   max-width: calc(33% - 0px);
   margin: 0px;
   min-width: 200px;
+  padding:2px;
   list-style: none;
   list-style-type: none;
   }
